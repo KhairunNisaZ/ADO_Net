@@ -76,20 +76,28 @@ namespace ADONet_DataSet
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
-            SqlConnection dbConnection = new SqlConnection(connectionString);
-            dbConnection.Open();
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
+            //SqlConnection dbConnection = new SqlConnection(connectionString);
+            //dbConnection.Open();
 
-            SqlDataAdapter adapter = new SqlDataAdapter("select * from travelData", dbConnection);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
+            //SqlDataAdapter adapter = new SqlDataAdapter("select * from travelData", dbConnection);
+            //DataTable table = new DataTable();
+            //adapter.Fill(table);
 
-            dataGridView1.DataSource = table;
+            //dataGridView1.DataSource = table;
 
 
             //DataSet dataSet = new DataSet();
-            //sqlDataAdapter.Fill(dataSet);
+            //adapter.Fill(dataSet);
             //dataGridView1.DataSource = dataSet;
+
+
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
+            SqlConnection dbConnection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand("select * from travelData", dbConnection);
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = command;
 
         }
 
