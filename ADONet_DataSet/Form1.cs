@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ADONet_DataSet
 {
@@ -51,12 +44,12 @@ namespace ADONet_DataSet
         }
         public static void main(string[] args)
         {
-           Application.Run(new Form1());
+            Application.Run(new Form1());
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -88,19 +81,10 @@ namespace ADONet_DataSet
 
         }
 
-        //private void Form1_Load_1(object sender, EventArgs e)
-        //{
-            // TODO: This line of code loads data into the 'travelDatabaseDataSet1.travelData' table. You can move, or remove it, as needed.
-            //this.travelDataTableAdapter.Fill(this.travelDatabaseDataSet1.travelData);
-
-        //}
-
         private void Form1_Load_1(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'travelDatabaseDataSet2.travelData' table. You can move, or remove it, as needed.
-          this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
-            /// TODO: This line of code loads data into the 'travelDatabaseDataSet1.travelData' table. You can move, or remove it, as needed.
-           // this.travelDataTableAdapter.Fill(this.travelDatabaseDataSet1.travelData);
+            this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
         }
     }
 }
