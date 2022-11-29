@@ -26,7 +26,7 @@ namespace ADONet_DataSet
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
 
@@ -71,7 +71,7 @@ namespace ADONet_DataSet
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter("SELECT * FROM travelData", connection);
             DataSet datas = new DataSet();
@@ -88,19 +88,19 @@ namespace ADONet_DataSet
 
         }
 
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
+        //private void Form1_Load_1(object sender, EventArgs e)
+        //{
             // TODO: This line of code loads data into the 'travelDatabaseDataSet1.travelData' table. You can move, or remove it, as needed.
-            this.travelDataTableAdapter.Fill(this.travelDatabaseDataSet1.travelData);
+            //this.travelDataTableAdapter.Fill(this.travelDatabaseDataSet1.travelData);
 
-        }
+        //}
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'travelDatabaseDataSet2.travelData' table. You can move, or remove it, as needed.
-            this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
-            // TODO: This line of code loads data into the 'travelDatabaseDataSet1.travelData' table. You can move, or remove it, as needed.
-            this.travelDataTableAdapter.Fill(this.travelDatabaseDataSet1.travelData);
+          this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
+            /// TODO: This line of code loads data into the 'travelDatabaseDataSet1.travelData' table. You can move, or remove it, as needed.
+           // this.travelDataTableAdapter.Fill(this.travelDatabaseDataSet1.travelData);
         }
     }
 }
