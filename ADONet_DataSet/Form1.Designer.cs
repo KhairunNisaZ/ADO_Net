@@ -48,32 +48,11 @@
             this.textNIK = new System.Windows.Forms.TextBox();
             this.textNama = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.travelDatabaseDataSet1 = new ADONet_DataSet.travelDatabaseDataSet();
-            this.travelDatabaseDataSet2 = new ADONet_DataSet.travelDatabaseDataSet();
-            this.travelDatabaseDataSet3 = new ADONet_DataSet.travelDatabaseDataSet();
-            this.travelDatabaseDataSet4 = new ADONet_DataSet.travelDatabaseDataSet();
-            this.travelDatabaseDataSet5 = new ADONet_DataSet.travelDatabaseDataSet();
-            this.travelDatabaseDataSet11 = new ADONet_DataSet.travelDatabaseDataSet1();
-            this.travelDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.travelDataTableAdapter = new ADONet_DataSet.travelDatabaseDataSet1TableAdapters.travelDataTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nIKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tujuanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomorKursiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jenisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -81,11 +60,9 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnRead);
-            this.groupBox2.Location = new System.Drawing.Point(475, 18);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(534, 23);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(624, 299);
+            this.groupBox2.Size = new System.Drawing.Size(446, 374);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Penumpang";
@@ -95,22 +72,12 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.namaDataGridViewTextBoxColumn,
-            this.nIKDataGridViewTextBoxColumn,
-            this.tujuanDataGridViewTextBoxColumn,
-            this.nomorKursiDataGridViewTextBoxColumn,
-            this.jenisDataGridViewTextBoxColumn});
-            this.dataGridView1.DataBindings.Add(new System.Windows.Forms.Binding("DataMember", this.travelDataBindingSource, "Jenis", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.dataGridView1.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.travelDataBindingSource, "Jenis", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.dataGridView1.DataSource = this.travelDataBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 63);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.DataSource = this.travelDatabaseDataSetBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(41, 79);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(563, 179);
+            this.dataGridView1.Size = new System.Drawing.Size(380, 224);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -126,10 +93,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(163, 256);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Location = new System.Drawing.Point(183, 320);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(91, 29);
+            this.btnDelete.Size = new System.Drawing.Size(102, 36);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -137,11 +103,9 @@
             // 
             // btnRead
             // 
-            this.btnRead.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRead.Location = new System.Drawing.Point(36, 34);
-            this.btnRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRead.Location = new System.Drawing.Point(41, 43);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(71, 24);
+            this.btnRead.Size = new System.Drawing.Size(80, 30);
             this.btnRead.TabIndex = 0;
             this.btnRead.Text = "Display";
             this.btnRead.UseVisualStyleBackColor = true;
@@ -150,18 +114,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(229, 158);
+            this.label5.Location = new System.Drawing.Point(258, 198);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 16);
+            this.label5.Size = new System.Drawing.Size(46, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "Jenis";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 161);
+            this.label4.Location = new System.Drawing.Point(45, 201);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
+            this.label4.Size = new System.Drawing.Size(68, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "No Kursi";
             // 
@@ -172,18 +136,17 @@
             "Ekonomi",
             "Bisnis",
             "Eksekutif"});
-            this.boxJenis.Location = new System.Drawing.Point(276, 154);
-            this.boxJenis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.boxJenis.Location = new System.Drawing.Point(310, 193);
             this.boxJenis.Name = "boxJenis";
-            this.boxJenis.Size = new System.Drawing.Size(98, 24);
+            this.boxJenis.Size = new System.Drawing.Size(110, 28);
             this.boxJenis.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 121);
+            this.label3.Location = new System.Drawing.Point(45, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 16);
+            this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tujuan";
             // 
@@ -194,18 +157,17 @@
             "Semarang",
             "Bandung",
             "Surabaya"});
-            this.boxTujuan.Location = new System.Drawing.Point(134, 114);
-            this.boxTujuan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.boxTujuan.Location = new System.Drawing.Point(151, 142);
             this.boxTujuan.Name = "boxTujuan";
-            this.boxTujuan.Size = new System.Drawing.Size(240, 24);
+            this.boxTujuan.Size = new System.Drawing.Size(269, 28);
             this.boxTujuan.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 81);
+            this.label2.Location = new System.Drawing.Point(45, 101);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 16);
+            this.label2.Size = new System.Drawing.Size(35, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "NIK";
             // 
@@ -228,27 +190,25 @@
             "13",
             "14",
             "15"});
-            this.boxKursi.Location = new System.Drawing.Point(134, 156);
-            this.boxKursi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.boxKursi.Location = new System.Drawing.Point(151, 195);
             this.boxKursi.Name = "boxKursi";
-            this.boxKursi.Size = new System.Drawing.Size(59, 24);
+            this.boxKursi.Size = new System.Drawing.Size(66, 28);
             this.boxKursi.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 38);
+            this.label1.Location = new System.Drawing.Point(45, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nama";
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(276, 256);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Location = new System.Drawing.Point(310, 320);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(89, 29);
+            this.btnUpdate.Size = new System.Drawing.Size(100, 36);
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -256,10 +216,9 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(276, 213);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmit.Location = new System.Drawing.Point(310, 266);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(89, 30);
+            this.btnSubmit.Size = new System.Drawing.Size(100, 37);
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Save";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -267,18 +226,16 @@
             // 
             // textNIK
             // 
-            this.textNIK.Location = new System.Drawing.Point(134, 78);
-            this.textNIK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textNIK.Location = new System.Drawing.Point(151, 98);
             this.textNIK.Name = "textNIK";
-            this.textNIK.Size = new System.Drawing.Size(240, 22);
+            this.textNIK.Size = new System.Drawing.Size(269, 26);
             this.textNIK.TabIndex = 2;
             // 
             // textNama
             // 
-            this.textNama.Location = new System.Drawing.Point(134, 38);
-            this.textNama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textNama.Location = new System.Drawing.Point(151, 47);
             this.textNama.Name = "textNama";
-            this.textNama.Size = new System.Drawing.Size(240, 22);
+            this.textNama.Size = new System.Drawing.Size(269, 26);
             this.textNama.TabIndex = 0;
             this.textNama.Text = "\r\n";
             // 
@@ -296,128 +253,29 @@
             this.groupBox1.Controls.Add(this.boxJenis);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(20, 18);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(23, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(426, 299);
+            this.groupBox1.Size = new System.Drawing.Size(479, 374);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input Data";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // travelDatabaseDataSet1
-            // 
-            this.travelDatabaseDataSet1.DataSetName = "travelDatabaseDataSet";
-            this.travelDatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // travelDatabaseDataSet2
-            // 
-            this.travelDatabaseDataSet2.DataSetName = "travelDatabaseDataSet";
-            this.travelDatabaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // travelDatabaseDataSet3
-            // 
-            this.travelDatabaseDataSet3.DataSetName = "travelDatabaseDataSet";
-            this.travelDatabaseDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // travelDatabaseDataSet4
-            // 
-            this.travelDatabaseDataSet4.DataSetName = "travelDatabaseDataSet";
-            this.travelDatabaseDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // travelDatabaseDataSet5
-            // 
-            this.travelDatabaseDataSet5.DataSetName = "travelDatabaseDataSet";
-            this.travelDatabaseDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // travelDatabaseDataSet11
-            // 
-            this.travelDatabaseDataSet11.DataSetName = "travelDatabaseDataSet1";
-            this.travelDatabaseDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // travelDataBindingSource
-            // 
-            this.travelDataBindingSource.DataMember = "travelData";
-            this.travelDataBindingSource.DataSource = this.travelDatabaseDataSet11;
-            // 
-            // travelDataTableAdapter
-            // 
-            this.travelDataTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // namaDataGridViewTextBoxColumn
-            // 
-            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
-            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
-            this.namaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
-            this.namaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nIKDataGridViewTextBoxColumn
-            // 
-            this.nIKDataGridViewTextBoxColumn.DataPropertyName = "NIK";
-            this.nIKDataGridViewTextBoxColumn.HeaderText = "NIK";
-            this.nIKDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nIKDataGridViewTextBoxColumn.Name = "nIKDataGridViewTextBoxColumn";
-            this.nIKDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tujuanDataGridViewTextBoxColumn
-            // 
-            this.tujuanDataGridViewTextBoxColumn.DataPropertyName = "Tujuan";
-            this.tujuanDataGridViewTextBoxColumn.HeaderText = "Tujuan";
-            this.tujuanDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tujuanDataGridViewTextBoxColumn.Name = "tujuanDataGridViewTextBoxColumn";
-            this.tujuanDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nomorKursiDataGridViewTextBoxColumn
-            // 
-            this.nomorKursiDataGridViewTextBoxColumn.DataPropertyName = "NomorKursi";
-            this.nomorKursiDataGridViewTextBoxColumn.HeaderText = "NomorKursi";
-            this.nomorKursiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomorKursiDataGridViewTextBoxColumn.Name = "nomorKursiDataGridViewTextBoxColumn";
-            this.nomorKursiDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // jenisDataGridViewTextBoxColumn
-            // 
-            this.jenisDataGridViewTextBoxColumn.DataPropertyName = "Jenis";
-            this.jenisDataGridViewTextBoxColumn.HeaderText = "Jenis";
-            this.jenisDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.jenisDataGridViewTextBoxColumn.Name = "jenisDataGridViewTextBoxColumn";
-            this.jenisDataGridViewTextBoxColumn.Width = 125;
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 342);
+            this.ClientSize = new System.Drawing.Size(1063, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Jendela Travel";
-            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDatabaseDataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelDataBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -442,20 +300,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource travelDatabaseDataSetBindingSource;
         private travelDatabaseDataSet travelDatabaseDataSet;
-        private travelDatabaseDataSet travelDatabaseDataSet1;
-        private travelDatabaseDataSet travelDatabaseDataSet2;
-        private travelDatabaseDataSet travelDatabaseDataSet3;
-        private travelDatabaseDataSet travelDatabaseDataSet4;
-        private travelDatabaseDataSet travelDatabaseDataSet5;
-        private travelDatabaseDataSet1 travelDatabaseDataSet11;
-        private System.Windows.Forms.BindingSource travelDataBindingSource;
-        private travelDatabaseDataSet1TableAdapters.travelDataTableAdapter travelDataTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nIKDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tujuanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomorKursiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jenisDataGridViewTextBoxColumn;
     }
 }
 
