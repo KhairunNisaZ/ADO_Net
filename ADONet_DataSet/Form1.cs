@@ -78,28 +78,15 @@ namespace ADONet_DataSet
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            //string connectionString  @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
-            //SqlConnection dbConnection = new SqlConnection(connectionString);
-            //dbConnection.Open();
-
-            //SqlDataAdapter adapter = new SqlDataAdapter("select * from travelData", dbConnection);
-            //DataTable table = new DataTable();
-            //adapter.Fill(table);
-
-            //dataGridView1.DataSource = table;
-
-
-            //DataSet dataSet = new DataSet();
-            //adapter.Fill(dataSet);
-            //dataGridView1.DataSource = dataSet;
-
-
-            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
-            //SqlConnection dbConnection = new SqlConnection(connectionString);
-            //SqlCommand command = new SqlCommand("select * from travelData", dbConnection);
-
-            //SqlDataAdapter adapter = new SqlDataAdapter();
-            //adapter.SelectCommand = command;
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlDataAdapter dataadapter = new SqlDataAdapter("SELECT * FROM travelData", connection);
+            DataSet datas = new DataSet();
+            connection.Open();
+            dataadapter.Fill(datas, "travelData");
+            connection.Close();
+            dataGridView1.DataSource = datas;
+            dataGridView1.DataMember = "travelData";
 
         }
 
@@ -110,6 +97,13 @@ namespace ADONet_DataSet
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'travelDatabaseDataSet1.travelData' table. You can move, or remove it, as needed.
+            this.travelDataTableAdapter.Fill(this.travelDatabaseDataSet1.travelData);
 
         }
     }
