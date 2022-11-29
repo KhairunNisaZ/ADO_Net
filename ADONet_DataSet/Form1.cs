@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Data.Common;
-using System.IO;
-using System.Net.Http.Headers;
+using System.Data.Sql;
 
 namespace ADONet_DataSet
 {
     public partial class Form1 : Form
     {
+        SqlConnection conn;
+        SqlCommand cmd;
+        SqlDataReader dr;
+        SqlDataAdapter da;
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +26,8 @@ namespace ADONet_DataSet
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-           
+            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30");
+            conn.Open();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -92,12 +94,12 @@ namespace ADONet_DataSet
             //dataGridView1.DataSource = dataSet;
 
 
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
-            SqlConnection dbConnection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand("select * from travelData", dbConnection);
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
+            //SqlConnection dbConnection = new SqlConnection(connectionString);
+            //SqlCommand command = new SqlCommand("select * from travelData", dbConnection);
 
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = command;
+            //SqlDataAdapter adapter = new SqlDataAdapter();
+            //adapter.SelectCommand = command;
 
         }
 
