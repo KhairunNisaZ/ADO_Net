@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Data.Common;
-using System.IO;
-using System.Net.Http.Headers;
+using System.Data.Sql;
 
 namespace ADONet_DataSet
 {
     public partial class Form1 : Form
     {
+        SqlConnection conn;
+        SqlCommand cmd;
+        SqlDataReader dr;
+        SqlDataAdapter da;
         public Form1()
         {
             InitializeComponent();
@@ -25,12 +26,13 @@ namespace ADONet_DataSet
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-           
+            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30");
+            conn.Open();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
 
@@ -76,16 +78,28 @@ namespace ADONet_DataSet
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection connection = new SqlConnection(ConnectionString);
-            SqlDataAdapter DataAdapter = new SqlDataAdapter("SELECT * FROM travelData", connection);
-            DataSet datas = new DataSet();
-            connection.Open();
-            DataAdapter.Fill(datas, "travelData");
-            connection.Close();
-            dataGridView1.DataSource = datas;
-            dataGridView1.DataMember = "travelData";
+            //string connectionString  @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
+            //SqlConnection dbConnection = new SqlConnection(connectionString);
+            //dbConnection.Open();
 
+            //SqlDataAdapter adapter = new SqlDataAdapter("select * from travelData", dbConnection);
+            //DataTable table = new DataTable();
+            //adapter.Fill(table);
+
+            //dataGridView1.DataSource = table;
+
+
+            //DataSet dataSet = new DataSet();
+            //adapter.Fill(dataSet);
+            //dataGridView1.DataSource = dataSet;
+
+
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
+            //SqlConnection dbConnection = new SqlConnection(connectionString);
+            //SqlCommand command = new SqlCommand("select * from travelData", dbConnection);
+
+            //SqlDataAdapter adapter = new SqlDataAdapter();
+            //adapter.SelectCommand = command;
 
         }
 
@@ -96,13 +110,6 @@ namespace ADONet_DataSet
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
-
-        }
-
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'travelDatabaseDataSet11.travelData' table. You can move, or remove it, as needed.
-            this.travelDataTableAdapter.Fill(this.travelDatabaseDataSet11.travelData);
 
         }
     }
