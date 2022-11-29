@@ -86,24 +86,6 @@ namespace ADONet_DataSet
             dataGridView1.DataSource = datas;
             dataGridView1.DataMember = "travelData";
 
-            //SqlDataAdapter adapter = new SqlDataAdapter("select * from travelData", dbConnection);
-            //DataTable table = new DataTable();
-            //adapter.Fill(table);
-
-            //dataGridView1.DataSource = table;
-
-
-            //DataSet dataSet = new DataSet();
-            //adapter.Fill(dataSet);
-            //dataGridView1.DataSource = dataSet;
-
-
-            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
-            //SqlConnection dbConnection = new SqlConnection(connectionString);
-            //SqlCommand command = new SqlCommand("select * from travelData", dbConnection);
-
-            //SqlDataAdapter adapter = new SqlDataAdapter();
-            //adapter.SelectCommand = command;
 
         }
 
