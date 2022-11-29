@@ -9,16 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
-using System.Data.Sql;
 
 namespace ADONet_DataSet
 {
     public partial class Form1 : Form
     {
-        SqlConnection conn;
-        SqlCommand cmd;
-        SqlDataReader dr;
-        SqlDataAdapter da;
         public Form1()
         {
             InitializeComponent();
@@ -26,8 +21,7 @@ namespace ADONet_DataSet
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30");
-            conn.Open();
+
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -36,12 +30,15 @@ namespace ADONet_DataSet
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
 
-            SqlCommand command = new SqlCommand("INSERT INTO travelData (Nama, NIK, Tujuan, NomorKursi, Jenis) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis)", dbConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO travelData (Nama, NIK, Tujuan, NomorKursi, Jenis, Tanggal) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis, @Tanggal)", dbConnection);
             command.Parameters.AddWithValue("@Nama", textNama.Text);
             command.Parameters.AddWithValue("@NIK", textNIK.Text);
             command.Parameters.AddWithValue("@Tujuan", boxTujuan.Text);
             command.Parameters.AddWithValue("@NomorKursi", boxKursi.Text);
             command.Parameters.AddWithValue("@Jenis", boxJenis.Text);
+            command.Parameters.AddWithValue("@Tanggal", dateTanggal.Text);
+            //command.Parameters.AddWithValue("@Harga", .Text);
+            //command.Parameters.AddWithValue("@KodeBooking", .Text);
             command.ExecuteNonQuery();
 
             MessageBox.Show("Data Added to Box");
@@ -50,15 +47,11 @@ namespace ADONet_DataSet
             boxTujuan.ResetText();
             boxKursi.ResetText();
             boxJenis.ResetText();
+            dateTanggal.ResetText();
         }
         public static void main(string[] args)
         {
            Application.Run(new Form1());
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -78,7 +71,7 @@ namespace ADONet_DataSet
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter("SELECT * FROM travelData", connection);
             DataSet datas = new DataSet();
@@ -87,11 +80,6 @@ namespace ADONet_DataSet
             connection.Close();
             dataGridView1.DataSource = datas;
             dataGridView1.DataMember = "travelData";
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -105,6 +93,14 @@ namespace ADONet_DataSet
             // TODO: This line of code loads data into the 'travelDatabaseDataSet1.travelData' table. You can move, or remove it, as needed.
             this.travelDataTableAdapter.Fill(this.travelDatabaseDataSet1.travelData);
 
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'travelDatabaseDataSet2.travelData' table. You can move, or remove it, as needed.
+            this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
+            // TODO: This line of code loads data into the 'travelDatabaseDataSet1.travelData' table. You can move, or remove it, as needed.
+            this.travelDataTableAdapter.Fill(this.travelDatabaseDataSet1.travelData);
         }
     }
 }

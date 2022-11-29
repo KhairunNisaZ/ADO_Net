@@ -79,6 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>travelDatabaseDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="travelDatabaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>travelDatabaseDataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +126,17 @@
     </None>
     <None Include="travelDatabaseDataSet1.xss">
       <DependentUpon>travelDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="travelDatabaseDataSet2.xsc">
+      <DependentUpon>travelDatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="travelDatabaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>travelDatabaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="travelDatabaseDataSet2.xss">
+      <DependentUpon>travelDatabaseDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
