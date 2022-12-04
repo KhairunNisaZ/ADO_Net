@@ -12,11 +12,6 @@ namespace ADONet_DataSet
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, System.EventArgs e)
-        {
-
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\OneDrive\Documents\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
