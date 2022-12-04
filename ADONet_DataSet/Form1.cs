@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ADONet_DataSet
 {
@@ -26,7 +19,7 @@ namespace ADONet_DataSet
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
 
@@ -51,12 +44,12 @@ namespace ADONet_DataSet
         }
         public static void main(string[] args)
         {
-           Application.Run(new Form1());
+            Application.Run(new Form1());
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -71,7 +64,7 @@ namespace ADONet_DataSet
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf';Integrated Security=True;Connect Timeout=30";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter("SELECT * FROM travelData", connection);
             DataSet datas = new DataSet();
@@ -80,11 +73,6 @@ namespace ADONet_DataSet
             connection.Close();
             dataGridView1.DataSource = datas;
             dataGridView1.DataMember = "travelData";
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -97,8 +85,6 @@ namespace ADONet_DataSet
         {
             // TODO: This line of code loads data into the 'travelDatabaseDataSet2.travelData' table. You can move, or remove it, as needed.
             this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
-            // TODO: This line of code loads data into the 'travelDatabaseDataSet1.travelData' table. You can move, or remove it, as needed.
-            this.travelDataTableAdapter.Fill(this.travelDatabaseDataSet1.travelData);
         }
     }
 }

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -69,16 +69,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="travelDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>travelDatabaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="travelDatabaseDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>travelDatabaseDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="travelDatabaseDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -105,28 +95,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="travelDatabaseDataSet.xsc">
-      <DependentUpon>travelDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="travelDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>travelDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="travelDatabaseDataSet.xss">
-      <DependentUpon>travelDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="travelDatabaseDataSet1.xsc">
-      <DependentUpon>travelDatabaseDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="travelDatabaseDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>travelDatabaseDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="travelDatabaseDataSet1.xss">
-      <DependentUpon>travelDatabaseDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="travelDatabaseDataSet2.xsc">
       <DependentUpon>travelDatabaseDataSet2.xsd</DependentUpon>
     </None>
