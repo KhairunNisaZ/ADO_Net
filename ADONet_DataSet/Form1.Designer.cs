@@ -84,7 +84,6 @@
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Penumpang";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // dataGridView1
             // 
@@ -110,7 +109,6 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(594, 224);
             this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -379,7 +377,6 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input Data";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label6
             // 
@@ -445,10 +442,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource travelDatabaseDataSetBindingSource;
-        //private travelDatabaseDataSet travelDatabaseDataSet;
-        //private travelDatabaseDataSet1 travelDatabaseDataSet1;
         private System.Windows.Forms.BindingSource travelDataBindingSource;
-        //private travelDatabaseDataSet1TableAdapters.travelDataTableAdapter travelDataTableAdapter;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTanggal;
         private travelDatabaseDataSet2 travelDatabaseDataSet2;

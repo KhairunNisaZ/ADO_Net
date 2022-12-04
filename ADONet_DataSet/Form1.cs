@@ -12,11 +12,6 @@ namespace ADONet_DataSet
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, System.EventArgs e)
-        {
-
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
@@ -47,16 +42,6 @@ namespace ADONet_DataSet
             Application.Run(new Form1());
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
@@ -73,11 +58,6 @@ namespace ADONet_DataSet
             connection.Close();
             dataGridView1.DataSource = datas;
             dataGridView1.DataMember = "travelData";
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
 
         }
 
