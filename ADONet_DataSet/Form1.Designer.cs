@@ -377,6 +377,7 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input Data";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label6
             // 
@@ -442,7 +443,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource travelDatabaseDataSetBindingSource;
+        //private travelDatabaseDataSet travelDatabaseDataSet;
+        //private travelDatabaseDataSet1 travelDatabaseDataSet1;
         private System.Windows.Forms.BindingSource travelDataBindingSource;
+        //private travelDatabaseDataSet1TableAdapters.travelDataTableAdapter travelDataTableAdapter;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTanggal;
         private travelDatabaseDataSet2 travelDatabaseDataSet2;

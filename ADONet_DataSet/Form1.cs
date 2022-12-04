@@ -14,7 +14,8 @@ namespace ADONet_DataSet
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\OneDrive\Documents\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
 
@@ -42,6 +43,16 @@ namespace ADONet_DataSet
             Application.Run(new Form1());
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
@@ -49,7 +60,8 @@ namespace ADONet_DataSet
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            string connectionString = @"string connectionString = @""Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30"";";
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter("SELECT * FROM travelData", connection);
             DataSet datas = new DataSet();
@@ -58,6 +70,11 @@ namespace ADONet_DataSet
             connection.Close();
             dataGridView1.DataSource = datas;
             dataGridView1.DataMember = "travelData";
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
 
         }
 
