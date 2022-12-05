@@ -146,18 +146,32 @@ namespace ADONet_DataSet
             try
             {
                 dbConnection.Open();
-
+                SqlCommand delete = new SqlCommand("DELETE FROM travelData WHERE (Nama='"+ textNama.Text+"')", dbConnection);
+                delete.ExecuteNonQuery();
+                MessageBox.Show("Delete Success");
+                dbConnection.Close();
             }
 
-            catch
-            {
 
+            catch (Exception ex)
+            {
+                MessageBox.Show("Deleting error" + ex);
             }
 
             finally
             {
-
+                dbConnection.Close();
             }
+
+
+          
+            SqlDataAdapter dataadapter = new SqlDataAdapter("SELECT * FROM travelData", dbConnection);
+            DataSet datas = new DataSet();
+            dbConnection.Open();
+            dataadapter.Fill(datas, "travelData");
+            dbConnection.Close();
+            dataGridView1.DataSource = datas;
+            dataGridView1.DataMember = "travelData";
         }
     }
 }

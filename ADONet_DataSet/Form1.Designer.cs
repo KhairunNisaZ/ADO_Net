@@ -75,13 +75,12 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnRead);
-            this.groupBox2.Location = new System.Drawing.Point(601, 28);
+            this.groupBox2.Location = new System.Drawing.Point(565, 28);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(720, 560);
+            this.groupBox2.Size = new System.Drawing.Size(1329, 560);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Penumpang";
@@ -103,12 +102,12 @@
             this.dataGridView1.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.travelDataBindingSource1, "Id", true));
             this.dataGridView1.DataBindings.Add(new System.Windows.Forms.Binding("DataMember", this.travelDataBindingSource1, "Id", true));
             this.dataGridView1.DataSource = this.travelDataBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 95);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 95);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(668, 280);
+            this.dataGridView1.Size = new System.Drawing.Size(1266, 280);
             this.dataGridView1.TabIndex = 3;
             // 
             // idDataGridViewTextBoxColumn
@@ -196,10 +195,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(340, 404);
+            this.btnDelete.Location = new System.Drawing.Point(350, 94);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(102, 36);
+            this.btnDelete.Size = new System.Drawing.Size(78, 35);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -207,7 +206,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(45, 52);
+            this.btnRead.Location = new System.Drawing.Point(25, 54);
             this.btnRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(80, 30);
@@ -358,6 +357,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnFind);
+            this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dateTanggal);
             this.groupBox1.Controls.Add(this.textNama);
@@ -376,7 +376,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(539, 560);
+            this.groupBox1.Size = new System.Drawing.Size(534, 560);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input Data";
@@ -384,9 +384,9 @@
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(374, 95);
+            this.btnFind.Location = new System.Drawing.Point(195, 95);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(99, 32);
+            this.btnFind.Size = new System.Drawing.Size(84, 34);
             this.btnFind.TabIndex = 20;
             this.btnFind.Text = "Search";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -419,7 +419,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1334, 615);
+            this.ClientSize = new System.Drawing.Size(1924, 600);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
