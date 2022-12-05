@@ -1,6 +1,8 @@
 ﻿using System;
+using System.CodeDom;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 
 namespace ADONet_DataSet
@@ -14,7 +16,7 @@ namespace ADONet_DataSet
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lenovo\OneDrive\Documents\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
@@ -55,12 +57,34 @@ namespace ADONet_DataSet
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection dbConnection = new SqlConnection(connectionString);
 
+            try
+            {
+                dbConnection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter("UPDATE travelData SET Nama='"+textNama.Text+"', NIK='"+textNIK.Text+"', Tujuan='"+boxTujuan.Text+"', NomorKursi='"+ boxKursi.Text+"', Jenis='"+ boxJenis.Text+"', Tanggal='"+ dateTanggal.Text+ "' WHERE Nama='"+textNama.Text+"'", dbConnection);
+                adapter.SelectCommand.ExecuteNonQuery();
+                MessageBox.Show("Update Success");
+                dbConnection.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Update Error" + ex);
+            }
+
+            finally
+            {
+                dbConnection.Close();
+            }
         }
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            string connectionString = @"string connectionString = @""Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30"";";
+
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
             //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter("SELECT * FROM travelData", connection);
@@ -73,15 +97,67 @@ namespace ADONet_DataSet
 
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load_1(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'travelDatabaseDataSet2.travelData' table. You can move, or remove it, as needed.
             this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            //string s_nama = textNama.Text;
+
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection dbConnection = new SqlConnection(connectionString);
+           
+
+            try
+            {
+                dbConnection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM travelData WHERE (Nama='" + textNama.Text + "')", dbConnection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read()) {
+                    textNama.Text = reader.GetValue(1).ToString();
+                    textNIK.Text = reader.GetValue(2).ToString();
+                    boxTujuan.Text = reader.GetValue(3).ToString();
+                    boxKursi.Text = reader.GetValue(4).ToString();
+                    boxJenis.Text = reader.GetValue(5).ToString();
+                    dateTanggal.Text = reader.GetValue(6).ToString();
+                }
+            }
+
+            catch (Exception ex) {
+                MessageBox.Show("Searching error" + ex);
+            }
+
+            finally {
+                dbConnection.Close();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection dbConnection = new SqlConnection(connectionString);
+
+            try
+            {
+                dbConnection.Open();
+
+            }
+
+            catch
+            {
+
+            }
+
+            finally
+            {
+
+            }
         }
     }
 }

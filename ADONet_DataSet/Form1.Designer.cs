@@ -59,6 +59,7 @@
             this.textNIK = new System.Windows.Forms.TextBox();
             this.textNama = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnFind = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTanggal = new System.Windows.Forms.DateTimePicker();
             this.travelDataTableAdapter1 = new ADONet_DataSet.travelDatabaseDataSet2TableAdapters.travelDataTableAdapter();
@@ -76,11 +77,11 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnRead);
-            this.groupBox2.Location = new System.Drawing.Point(534, 22);
+            this.groupBox2.Location = new System.Drawing.Point(601, 28);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(640, 448);
+            this.groupBox2.Size = new System.Drawing.Size(720, 560);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Penumpang";
@@ -102,12 +103,12 @@
             this.dataGridView1.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.travelDataBindingSource1, "Id", true));
             this.dataGridView1.DataBindings.Add(new System.Windows.Forms.Binding("DataMember", this.travelDataBindingSource1, "Id", true));
             this.dataGridView1.DataSource = this.travelDataBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 76);
+            this.dataGridView1.Location = new System.Drawing.Point(45, 95);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(594, 224);
+            this.dataGridView1.Size = new System.Drawing.Size(668, 280);
             this.dataGridView1.TabIndex = 3;
             // 
             // idDataGridViewTextBoxColumn
@@ -195,20 +196,21 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(302, 323);
+            this.btnDelete.Location = new System.Drawing.Point(340, 404);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(91, 29);
+            this.btnDelete.Size = new System.Drawing.Size(102, 36);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(40, 42);
+            this.btnRead.Location = new System.Drawing.Point(45, 52);
             this.btnRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(71, 24);
+            this.btnRead.Size = new System.Drawing.Size(80, 30);
             this.btnRead.TabIndex = 0;
             this.btnRead.Text = "Display";
             this.btnRead.UseVisualStyleBackColor = true;
@@ -221,18 +223,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(259, 240);
+            this.label5.Location = new System.Drawing.Point(289, 346);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 16);
+            this.label5.Size = new System.Drawing.Size(46, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "Jenis";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 243);
+            this.label4.Location = new System.Drawing.Point(52, 346);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
+            this.label4.Size = new System.Drawing.Size(68, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "No Kursi";
             // 
@@ -243,18 +245,18 @@
             "Ekonomi",
             "Bisnis",
             "Eksekutif"});
-            this.boxJenis.Location = new System.Drawing.Point(311, 234);
+            this.boxJenis.Location = new System.Drawing.Point(350, 343);
             this.boxJenis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boxJenis.Name = "boxJenis";
-            this.boxJenis.Size = new System.Drawing.Size(98, 24);
+            this.boxJenis.Size = new System.Drawing.Size(110, 28);
             this.boxJenis.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 121);
+            this.label3.Location = new System.Drawing.Point(52, 223);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 16);
+            this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tujuan";
             // 
@@ -265,18 +267,18 @@
             "Semarang",
             "Bandung",
             "Surabaya"});
-            this.boxTujuan.Location = new System.Drawing.Point(151, 142);
+            this.boxTujuan.Location = new System.Drawing.Point(170, 220);
             this.boxTujuan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boxTujuan.Name = "boxTujuan";
-            this.boxTujuan.Size = new System.Drawing.Size(270, 24);
+            this.boxTujuan.Size = new System.Drawing.Size(303, 28);
             this.boxTujuan.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 81);
+            this.label2.Location = new System.Drawing.Point(52, 167);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 16);
+            this.label2.Size = new System.Drawing.Size(35, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "NIK";
             // 
@@ -299,27 +301,27 @@
             "13",
             "14",
             "15"});
-            this.boxKursi.Location = new System.Drawing.Point(152, 237);
+            this.boxKursi.Location = new System.Drawing.Point(170, 343);
             this.boxKursi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boxKursi.Name = "boxKursi";
-            this.boxKursi.Size = new System.Drawing.Size(59, 24);
+            this.boxKursi.Size = new System.Drawing.Size(66, 28);
             this.boxKursi.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 48);
+            this.label1.Location = new System.Drawing.Point(52, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nama";
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(311, 362);
+            this.btnUpdate.Location = new System.Drawing.Point(350, 494);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(89, 29);
+            this.btnUpdate.Size = new System.Drawing.Size(112, 47);
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -327,10 +329,10 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(311, 308);
+            this.btnSubmit.Location = new System.Drawing.Point(350, 427);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(100, 38);
+            this.btnSubmit.Size = new System.Drawing.Size(112, 48);
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Save";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -338,23 +340,24 @@
             // 
             // textNIK
             // 
-            this.textNIK.Location = new System.Drawing.Point(151, 98);
+            this.textNIK.Location = new System.Drawing.Point(170, 161);
             this.textNIK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNIK.Name = "textNIK";
-            this.textNIK.Size = new System.Drawing.Size(270, 22);
+            this.textNIK.Size = new System.Drawing.Size(303, 26);
             this.textNIK.TabIndex = 2;
             // 
             // textNama
             // 
-            this.textNama.Location = new System.Drawing.Point(151, 48);
+            this.textNama.Location = new System.Drawing.Point(170, 52);
             this.textNama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNama.Name = "textNama";
-            this.textNama.Size = new System.Drawing.Size(270, 22);
+            this.textNama.Size = new System.Drawing.Size(303, 26);
             this.textNama.TabIndex = 0;
             this.textNama.Text = "\r\n";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnFind);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dateTanggal);
             this.groupBox1.Controls.Add(this.textNama);
@@ -369,30 +372,41 @@
             this.groupBox1.Controls.Add(this.boxJenis);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(22, 22);
+            this.groupBox1.Location = new System.Drawing.Point(25, 28);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(479, 448);
+            this.groupBox1.Size = new System.Drawing.Size(539, 560);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input Data";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // btnFind
+            // 
+            this.btnFind.Location = new System.Drawing.Point(374, 95);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(99, 32);
+            this.btnFind.TabIndex = 20;
+            this.btnFind.Text = "Search";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(46, 194);
+            this.label6.Location = new System.Drawing.Point(52, 284);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 16);
+            this.label6.Size = new System.Drawing.Size(70, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "Tanggal ";
             // 
             // dateTanggal
             // 
-            this.dateTanggal.Location = new System.Drawing.Point(151, 189);
+            this.dateTanggal.Location = new System.Drawing.Point(170, 278);
+            this.dateTanggal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTanggal.Name = "dateTanggal";
-            this.dateTanggal.Size = new System.Drawing.Size(270, 22);
+            this.dateTanggal.Size = new System.Drawing.Size(303, 26);
             this.dateTanggal.TabIndex = 16;
             // 
             // travelDataTableAdapter1
@@ -401,11 +415,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1186, 492);
+            this.ClientSize = new System.Drawing.Size(1334, 615);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -461,6 +475,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tanggalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jenisDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnFind;
     }
 }
 
