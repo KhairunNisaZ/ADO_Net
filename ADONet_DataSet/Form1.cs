@@ -9,6 +9,13 @@ namespace ADONet_DataSet
 {
     public partial class Form1 : Form
     {
+        // //////////////////////////////////////////////////////////////////////////////////// //
+        // Ganti Data Sourcenya disini aja yaaa biar ga ulang ulang terus gantinya --> ******   //
+        // //////////////////////////////////////////////////////////////////////////////////// //
+
+        //string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+        
         public Form1()
         {
             InitializeComponent();
@@ -16,8 +23,6 @@ namespace ADONet_DataSet
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
-            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
 
@@ -32,6 +37,7 @@ namespace ADONet_DataSet
             //command.Parameters.AddWithValue("@KodeBooking", .Text);
             command.ExecuteNonQuery();
 
+            dbConnection.Close();
             MessageBox.Show("Data Added to Box");
             textNama.Clear();
             textNIK.Clear();
@@ -57,8 +63,6 @@ namespace ADONet_DataSet
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
-            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection dbConnection = new SqlConnection(connectionString);
 
             try
@@ -84,8 +88,6 @@ namespace ADONet_DataSet
         private void btnRead_Click(object sender, EventArgs e)
         {
 
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
-            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter("SELECT * FROM travelData", connection);
             DataSet datas = new DataSet();
@@ -107,8 +109,6 @@ namespace ADONet_DataSet
         {
             //string s_nama = textNama.Text;
 
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
-            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection dbConnection = new SqlConnection(connectionString);
            
 
@@ -139,10 +139,7 @@ namespace ADONet_DataSet
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
-            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\Clone\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection dbConnection = new SqlConnection(connectionString);
-
             try
             {
                 dbConnection.Open();
