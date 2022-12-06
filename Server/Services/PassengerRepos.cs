@@ -1,4 +1,5 @@
 ﻿using Server.Models;
+using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace Server.Services
@@ -10,30 +11,42 @@ namespace Server.Services
         /// </summary>
         readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\Server\TravelData.mdf;Integrated Security=True;Connect Timeout=30";
 
+        /// <summary>
+        /// Get All Passenger Data
+        /// </summary>
+        /// <returns>
+        /// <see cref="List{T}"/>
+        /// 
+        /// <para>
+        /// <see cref="T"/> is <see cref="Passenger"/>
+        /// </para>
+        /// </returns>
         public List<Passenger> GetAllPassenger()
         {
-            List<Passenger> passengers = new List<Passenger>();
-            SqlConnection database = new SqlConnection(connection);
-            database.Open();
+            List<Passenger> passengers = new();
+            SqlConnection dbConnection = new(connection);
+            dbConnection.Open();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM PassengersData", database);
+            SqlCommand command = new("SELECT * FROM PassengersData", dbConnection);
             SqlDataReader rows = command.ExecuteReader();
 
             while (rows.Read())
             {
-                Passenger passenger = new Passenger();
-                passenger.Id = (int)rows.GetValue(0);
-                passenger.Nama = (string)rows.GetValue(1);
-                passenger.NIK = (string)rows.GetValue(2);
-                passenger.Tujuan = (string)rows.GetValue(3);
-                passenger.NomorKursi = (string)rows.GetValue(4);
-                passenger.Jenis = (string)rows.GetValue(5);
-                passenger.Tanggal = (string)rows.GetValue(6);
-                passenger.Harga = (string)rows.GetValue(7);
+                Passenger passenger = new()
+                {
+                    Id = (int)rows.GetValue(0),
+                    Nama = (string)rows.GetValue(1),
+                    NIK = (string)rows.GetValue(2),
+                    Tujuan = (string)rows.GetValue(3),
+                    NomorKursi = (string)rows.GetValue(4),
+                    Jenis = (string)rows.GetValue(5),
+                    Tanggal = (string)rows.GetValue(6),
+                    Harga = (string)rows.GetValue(7)
+                };
 
                 passengers.Add(passenger);
             }
-            database.Close();
+            dbConnection.Close();
 
             //ToDo -> Add Error Handler when database is null
             return passengers;
@@ -41,13 +54,13 @@ namespace Server.Services
 
         public Passenger GetPassengerById(int index)
         {
-            Passenger passenger = new Passenger();
-            SqlConnection database = new SqlConnection(connection);
-            database.Open();
+            SqlConnection dbConnection = new(connection);
+            dbConnection.Open();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM PassengersData WHERE (Id=" + index +")", database);
+            SqlCommand command = new("SELECT * FROM PassengersData WHERE (Id=" + index +")", dbConnection);
             SqlDataReader rows = command.ExecuteReader();
 
+            Passenger passenger = new();
             while (rows.Read())
             {
                 passenger.Id = (int)rows.GetValue(0);
@@ -58,11 +71,29 @@ namespace Server.Services
                 passenger.Jenis = (string)rows.GetValue(5);
                 passenger.Tanggal = (string)rows.GetValue(6);
                 passenger.Harga = (string)rows.GetValue(7);
+                passenger.KodeBooking = (string)rows.GetValue(8);
             }
-            database.Close();
+            dbConnection.Close();
             
             //ToDo -> Add Error Handler when data{id} is null
             return passenger;
+        }
+
+        public void AddPassanger()
+        {
+            SqlConnection dbConnection = new(connection);
+            dbConnection.Open();
+
+            SqlCommand command = new SqlCommand("INSERT INTO PassengersData (Nama, NIK, Tujuan, NomorKursi, Jenis, Tanggal) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis, @Tanggal)", dbConnection);
+            command.Parameters.AddWithValue("@Nama", "Agustioleo");
+            command.Parameters.AddWithValue("@NIK", "567112310091");
+            command.Parameters.AddWithValue("@Tujuan", "Papua Barat");
+            command.Parameters.AddWithValue("@NomorKursi", "23");
+            command.Parameters.AddWithValue("@Jenis", "Eksekutif");
+            command.Parameters.AddWithValue("@Tanggal", "20 November 2022");
+            command.ExecuteNonQuery();
+
+            dbConnection.Close();
         }
     }
 }

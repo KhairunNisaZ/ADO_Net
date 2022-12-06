@@ -29,6 +29,12 @@ namespace Server.Controllers
             return passengerRepos.GetPassengerById(id);
         }
 
+        [HttpPost]
+
+        public void Post()
+        {
+            passengerRepos.AddPassanger();
+        }
 
     }
 }
