@@ -26,26 +26,28 @@ namespace ADONet_DataSet
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            penumpang.Nama = textNama.Text;
+            penumpang.Nik = textNIK.Text;
+            penumpang.Tujuan = boxTujuan.Text;
+            penumpang.Kursi = boxKursi.Text;
+            penumpang.Jenis = boxJenis.Text;
+            penumpang.Tanggal = dateTanggal.Text;
+            penumpang.HitungKodeBooking();
+            penumpang.HitungHarga();
+
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
 
             SqlCommand command = new SqlCommand("INSERT INTO travelData (Nama, NIK, Tujuan, NomorKursi, Jenis, Tanggal) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis, @Tanggal)", dbConnection);
-            
-            command.Parameters.AddWithValue("@Nama", textNama.Text);
-            command.Parameters.AddWithValue("@NIK", textNIK.Text);
-            command.Parameters.AddWithValue("@Tujuan", boxTujuan.Text);
-            command.Parameters.AddWithValue("@NomorKursi", boxKursi.Text);
-            command.Parameters.AddWithValue("@Jenis", boxJenis.Text);
-            command.Parameters.AddWithValue("@Tanggal", dateTanggal.Text);
 
-            //command.Parameters.AddWithValue("@Nama", textNama.Text);
-            //command.Parameters.AddWithValue("@NIK", textNIK.Text);
-            //command.Parameters.AddWithValue("@Tujuan", boxTujuan.Text);
-            //command.Parameters.AddWithValue("@NomorKursi", boxKursi.Text);
-            //command.Parameters.AddWithValue("@Jenis", boxJenis.Text);
-            //command.Parameters.AddWithValue("@Tanggal", dateTanggal.Text);
-            //command.Parameters.AddWithValue("@Harga", .Text);
-            //command.Parameters.AddWithValue("@KodeBooking", .Text);
+            command.Parameters.AddWithValue("@Nama", penumpang.Nama);
+            command.Parameters.AddWithValue("@NIK", penumpang.Nik);
+            command.Parameters.AddWithValue("@Tujuan", penumpang.Tujuan);
+            command.Parameters.AddWithValue("@NomorKursi", penumpang.Kursi);
+            command.Parameters.AddWithValue("@Jenis", penumpang.Jenis);
+            command.Parameters.AddWithValue("@Tanggal", penumpang.Tanggal);
+            command.Parameters.AddWithValue("@Harga", penumpang.Harga);
+            command.Parameters.AddWithValue("@KodeBooking", penumpang.KodeBooking);
             command.ExecuteNonQuery();
 
             dbConnection.Close();

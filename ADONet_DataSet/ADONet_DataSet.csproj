@@ -49,7 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Penumpang_21">
-      <HintPath>..\packages\Penumpang_21.1.5.0\Penumpang\bin\Release\Penumpang_21.dll</HintPath>
+      <HintPath>..\packages\Penumpang_21.1.6.0\Penumpang\bin\Release\Penumpang_21.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
