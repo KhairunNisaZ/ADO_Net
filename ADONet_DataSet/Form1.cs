@@ -15,8 +15,8 @@ namespace ADONet_DataSet
         // //////////////////////////////////////////////////////////////////////////////////// //
 
         //string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
-        //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
-        string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\kuliah\sem 3\pbo\nisa\ADO_Net\ADONet_DataSet\travelDatabase.mdf;Integrated Security = True; Connect Timeout = 30";
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+        //string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\kuliah\sem 3\pbo\nisa\ADO_Net\ADONet_DataSet\travelDatabase.mdf;Integrated Security = True; Connect Timeout = 30";
 
         Penumpang penumpang = new Penumpang();
         public Form1()
