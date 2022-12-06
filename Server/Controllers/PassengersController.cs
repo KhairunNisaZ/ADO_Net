@@ -22,19 +22,25 @@ namespace Server.Controllers
             return passengerRepos.GetAllPassenger();
         }
 
-        //GET: jendelatravel/<PassengersController>/2
+        //GET: jendelatravel/<PassengersController>/:id
         [HttpGet("{id}")]
         public Passenger Get(int id)
         {
             return passengerRepos.GetPassengerById(id);
         }
 
+        //POST: jendelatravel/<PassengersController>/
         [HttpPost]
-
         public void Post()
         {
-            passengerRepos.AddPassanger();
+            passengerRepos.AddPassenger();
         }
 
+        //DELETE: jendelatravel/<PassengersController>/:id
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            passengerRepos.DeletePassenger(id);
+        }
     }
 }
