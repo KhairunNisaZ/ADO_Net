@@ -38,7 +38,7 @@ namespace ADONet_DataSet
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
 
-            SqlCommand command = new SqlCommand("INSERT INTO travelData (Nama, NIK, Tujuan, NomorKursi, Jenis, Tanggal) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis, @Tanggal)", dbConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO travelData (Nama, NIK, Tujuan, NomorKursi, Jenis, Tanggal, Harga, KodeBooking) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis, @Tanggal, @Harga, @KodeBooking)", dbConnection);
 
             command.Parameters.AddWithValue("@Nama", penumpang.Nama);
             command.Parameters.AddWithValue("@NIK", penumpang.Nik);
