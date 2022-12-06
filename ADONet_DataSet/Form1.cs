@@ -14,9 +14,9 @@ namespace ADONet_DataSet
         // Ganti Data Sourcenya disini aja yaaa biar ga ulang ulang terus gantinya --> ******   //
         // //////////////////////////////////////////////////////////////////////////////////// //
 
-        //string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
-        //string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\kuliah\sem 3\pbo\nisa\ADO_Net\ADONet_DataSet\travelDatabase.mdf;Integrated Security = True; Connect Timeout = 30";
+        //readonly string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
+        readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+        //readonly string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\kuliah\sem 3\pbo\nisa\ADO_Net\ADONet_DataSet\travelDatabase.mdf;Integrated Security = True; Connect Timeout = 30";
 
         Penumpang penumpang = new Penumpang();
         public Form1()
@@ -24,7 +24,7 @@ namespace ADONet_DataSet
             InitializeComponent();
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void BtnSubmit_Click(object sender, EventArgs e)
         {
             penumpang.Nama = textNama.Text;
             penumpang.Nik = textNIK.Text;
@@ -59,22 +59,12 @@ namespace ADONet_DataSet
             boxJenis.ResetText();
             dateTanggal.ResetText();
         }
-        public static void main(string[] args)
+        public static void Main(string[] args)
         {
             Application.Run(new Form1());
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void BtnUpdate_Click(object sender, EventArgs e)
         {
             SqlConnection dbConnection = new SqlConnection(connectionString);
 
@@ -93,7 +83,7 @@ namespace ADONet_DataSet
             }
         }
 
-        private void btnRead_Click(object sender, EventArgs e)
+        private void BtnRead_Click(object sender, EventArgs e)
         {
             SqlConnection dbConnection = new SqlConnection(connectionString);
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM travelData", dbConnection);
@@ -111,7 +101,7 @@ namespace ADONet_DataSet
             this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
         }
 
-        private void btnFind_Click(object sender, EventArgs e)
+        private void BtnFind_Click(object sender, EventArgs e)
         {
             SqlConnection dbConnection = new SqlConnection(connectionString);
            
@@ -138,7 +128,7 @@ namespace ADONet_DataSet
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             SqlConnection dbConnection = new SqlConnection(connectionString);
             try

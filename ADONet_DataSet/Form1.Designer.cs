@@ -31,6 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.kodeBookingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomorKursiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nIKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tujuanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tanggalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jenisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.travelDataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.travelDatabaseDataSet2 = new ADONet_DataSet.travelDatabaseDataSet2();
             this.btnRead = new System.Windows.Forms.Button();
@@ -57,14 +65,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textKode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.kodeBookingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomorKursiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nIKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tujuanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tanggalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jenisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelDataBindingSource1)).BeginInit();
@@ -123,6 +123,78 @@
             this.dataGridView1.Size = new System.Drawing.Size(1213, 505);
             this.dataGridView1.TabIndex = 3;
             // 
+            // kodeBookingDataGridViewTextBoxColumn
+            // 
+            this.kodeBookingDataGridViewTextBoxColumn.DataPropertyName = "KodeBooking";
+            this.kodeBookingDataGridViewTextBoxColumn.HeaderText = "KodeBooking";
+            this.kodeBookingDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.kodeBookingDataGridViewTextBoxColumn.Name = "kodeBookingDataGridViewTextBoxColumn";
+            this.kodeBookingDataGridViewTextBoxColumn.ReadOnly = true;
+            this.kodeBookingDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nomorKursiDataGridViewTextBoxColumn
+            // 
+            this.nomorKursiDataGridViewTextBoxColumn.DataPropertyName = "NomorKursi";
+            this.nomorKursiDataGridViewTextBoxColumn.HeaderText = "Kursi";
+            this.nomorKursiDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nomorKursiDataGridViewTextBoxColumn.Name = "nomorKursiDataGridViewTextBoxColumn";
+            this.nomorKursiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomorKursiDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // namaDataGridViewTextBoxColumn
+            // 
+            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
+            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
+            this.namaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
+            this.namaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.namaDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // nIKDataGridViewTextBoxColumn
+            // 
+            this.nIKDataGridViewTextBoxColumn.DataPropertyName = "NIK";
+            this.nIKDataGridViewTextBoxColumn.HeaderText = "NIK";
+            this.nIKDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nIKDataGridViewTextBoxColumn.Name = "nIKDataGridViewTextBoxColumn";
+            this.nIKDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nIKDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tujuanDataGridViewTextBoxColumn
+            // 
+            this.tujuanDataGridViewTextBoxColumn.DataPropertyName = "Tujuan";
+            this.tujuanDataGridViewTextBoxColumn.HeaderText = "Tujuan";
+            this.tujuanDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tujuanDataGridViewTextBoxColumn.Name = "tujuanDataGridViewTextBoxColumn";
+            this.tujuanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tujuanDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tanggalDataGridViewTextBoxColumn
+            // 
+            this.tanggalDataGridViewTextBoxColumn.DataPropertyName = "Tanggal";
+            this.tanggalDataGridViewTextBoxColumn.HeaderText = "Tanggal";
+            this.tanggalDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tanggalDataGridViewTextBoxColumn.Name = "tanggalDataGridViewTextBoxColumn";
+            this.tanggalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tanggalDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // jenisDataGridViewTextBoxColumn
+            // 
+            this.jenisDataGridViewTextBoxColumn.DataPropertyName = "Jenis";
+            this.jenisDataGridViewTextBoxColumn.HeaderText = "Jenis";
+            this.jenisDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.jenisDataGridViewTextBoxColumn.Name = "jenisDataGridViewTextBoxColumn";
+            this.jenisDataGridViewTextBoxColumn.ReadOnly = true;
+            this.jenisDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // hargaDataGridViewTextBoxColumn
+            // 
+            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "Harga";
+            this.hargaDataGridViewTextBoxColumn.HeaderText = "Harga";
+            this.hargaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
+            this.hargaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hargaDataGridViewTextBoxColumn.Width = 150;
+            // 
             // travelDataBindingSource1
             // 
             this.travelDataBindingSource1.DataMember = "travelData";
@@ -142,7 +214,7 @@
             this.btnRead.TabIndex = 0;
             this.btnRead.Text = "Display";
             this.btnRead.UseVisualStyleBackColor = true;
-            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+            this.btnRead.Click += new System.EventHandler(this.BtnRead_Click);
             // 
             // btnDelete
             // 
@@ -153,7 +225,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // travelDataBindingSource
             // 
@@ -267,7 +339,7 @@
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // btnSubmit
             // 
@@ -278,7 +350,7 @@
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Save";
             this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // textNIK
             // 
@@ -322,7 +394,6 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input Data";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label6
             // 
@@ -349,7 +420,7 @@
             this.btnFind.TabIndex = 20;
             this.btnFind.Text = "Search";
             this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            this.btnFind.Click += new System.EventHandler(this.BtnFind_Click);
             // 
             // travelDataTableAdapter1
             // 
@@ -387,78 +458,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Kode Booking";
             // 
-            // kodeBookingDataGridViewTextBoxColumn
-            // 
-            this.kodeBookingDataGridViewTextBoxColumn.DataPropertyName = "KodeBooking";
-            this.kodeBookingDataGridViewTextBoxColumn.HeaderText = "KodeBooking";
-            this.kodeBookingDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.kodeBookingDataGridViewTextBoxColumn.Name = "kodeBookingDataGridViewTextBoxColumn";
-            this.kodeBookingDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kodeBookingDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nomorKursiDataGridViewTextBoxColumn
-            // 
-            this.nomorKursiDataGridViewTextBoxColumn.DataPropertyName = "NomorKursi";
-            this.nomorKursiDataGridViewTextBoxColumn.HeaderText = "Kursi";
-            this.nomorKursiDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nomorKursiDataGridViewTextBoxColumn.Name = "nomorKursiDataGridViewTextBoxColumn";
-            this.nomorKursiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomorKursiDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // namaDataGridViewTextBoxColumn
-            // 
-            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
-            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
-            this.namaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
-            this.namaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.namaDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // nIKDataGridViewTextBoxColumn
-            // 
-            this.nIKDataGridViewTextBoxColumn.DataPropertyName = "NIK";
-            this.nIKDataGridViewTextBoxColumn.HeaderText = "NIK";
-            this.nIKDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nIKDataGridViewTextBoxColumn.Name = "nIKDataGridViewTextBoxColumn";
-            this.nIKDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nIKDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tujuanDataGridViewTextBoxColumn
-            // 
-            this.tujuanDataGridViewTextBoxColumn.DataPropertyName = "Tujuan";
-            this.tujuanDataGridViewTextBoxColumn.HeaderText = "Tujuan";
-            this.tujuanDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.tujuanDataGridViewTextBoxColumn.Name = "tujuanDataGridViewTextBoxColumn";
-            this.tujuanDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tujuanDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tanggalDataGridViewTextBoxColumn
-            // 
-            this.tanggalDataGridViewTextBoxColumn.DataPropertyName = "Tanggal";
-            this.tanggalDataGridViewTextBoxColumn.HeaderText = "Tanggal";
-            this.tanggalDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.tanggalDataGridViewTextBoxColumn.Name = "tanggalDataGridViewTextBoxColumn";
-            this.tanggalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tanggalDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // jenisDataGridViewTextBoxColumn
-            // 
-            this.jenisDataGridViewTextBoxColumn.DataPropertyName = "Jenis";
-            this.jenisDataGridViewTextBoxColumn.HeaderText = "Jenis";
-            this.jenisDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.jenisDataGridViewTextBoxColumn.Name = "jenisDataGridViewTextBoxColumn";
-            this.jenisDataGridViewTextBoxColumn.ReadOnly = true;
-            this.jenisDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // hargaDataGridViewTextBoxColumn
-            // 
-            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "Harga";
-            this.hargaDataGridViewTextBoxColumn.HeaderText = "Harga";
-            this.hargaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
-            this.hargaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hargaDataGridViewTextBoxColumn.Width = 150;
-            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -466,6 +465,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1773, 668);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
