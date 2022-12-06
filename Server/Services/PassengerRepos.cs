@@ -8,8 +8,8 @@ namespace Server.Services
         /// <summary>
         /// this is <c>connectionString</c> as parameter to <see cref="SqlConnection"/>
         /// </summary>
-        readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\Server\TravelData.mdf;Integrated Security=True;Connect Timeout=30";
-
+        //readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\Server\TravelData.mdf;Integrated Security=True;Connect Timeout=30";
+        readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\kuliah\sem 3\pbo\nisa\ADO_Net\Server\TravelData.mdf;Integrated Security = True";
         public List<Passenger> GetAllPassenger()
         {
             List<Passenger> passengers = new List<Passenger>();
