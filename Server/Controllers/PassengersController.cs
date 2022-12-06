@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Server.Models;
 using Server.Services;
+using DataPenumpang;
 
 namespace Server.Controllers
 {
@@ -17,30 +18,30 @@ namespace Server.Controllers
 
         // GET: jendelatravel/<PassengersController>
         [HttpGet]
-        public List<Passenger> Get()
+        public List<Penumpang> Get()
         {
             return passengerRepos.GetAllPassenger();
         }
 
         //GET: jendelatravel/<PassengersController>/:id
-        [HttpGet("{id}")]
-        public Passenger Get(int id)
+        [HttpGet("{KodeBooking}")]
+        public Penumpang Get([FromRoute]string KodeBooking)
         {
-            return passengerRepos.GetPassengerById(id);
+            return passengerRepos.GetPassengerById(KodeBooking);
         }
 
         //POST: jendelatravel/<PassengersController>/
         [HttpPost]
-        public void Post()
+        public void Post([FromBody]Penumpang penumpang)
         {
-            passengerRepos.AddPassenger();
+            passengerRepos.AddPassenger(penumpang);
         }
 
         //DELETE: jendelatravel/<PassengersController>/:id
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{KodeBooking}")]
+        public void Delete([FromRoute]string KodeBooking)
         {
-            passengerRepos.DeletePassenger(id);
+            passengerRepos.DeletePassenger(KodeBooking);
         }
     }
 }
