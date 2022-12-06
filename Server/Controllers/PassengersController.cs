@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Server.Models;
 using Server.Services;
 using DataPenumpang;
+using Microsoft.AspNetCore.Mvc.Routing;
 
 namespace Server.Controllers
 {
@@ -18,6 +18,7 @@ namespace Server.Controllers
 
         // GET: jendelatravel/<PassengersController>
         [HttpGet]
+        
         public List<Penumpang> Get()
         {
             return passengerRepos.GetAllPassenger();
