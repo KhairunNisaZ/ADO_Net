@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
+using DataPenumpang;
 
 namespace ADONet_DataSet
 {
@@ -13,9 +14,11 @@ namespace ADONet_DataSet
         // Ganti Data Sourcenya disini aja yaaa biar ga ulang ulang terus gantinya --> ******   //
         // //////////////////////////////////////////////////////////////////////////////////// //
 
-        string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
+        //string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
         //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
-        
+        string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\kuliah\sem 3\pbo\nisa\ADO_Net\ADONet_DataSet\travelDatabase.mdf;Integrated Security = True; Connect Timeout = 30";
+
+        Penumpang penumpang = new Penumpang();
         public Form1()
         {
             InitializeComponent();
@@ -27,12 +30,20 @@ namespace ADONet_DataSet
             dbConnection.Open();
 
             SqlCommand command = new SqlCommand("INSERT INTO travelData (Nama, NIK, Tujuan, NomorKursi, Jenis, Tanggal) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis, @Tanggal)", dbConnection);
+            
             command.Parameters.AddWithValue("@Nama", textNama.Text);
             command.Parameters.AddWithValue("@NIK", textNIK.Text);
             command.Parameters.AddWithValue("@Tujuan", boxTujuan.Text);
             command.Parameters.AddWithValue("@NomorKursi", boxKursi.Text);
             command.Parameters.AddWithValue("@Jenis", boxJenis.Text);
             command.Parameters.AddWithValue("@Tanggal", dateTanggal.Text);
+
+            //command.Parameters.AddWithValue("@Nama", textNama.Text);
+            //command.Parameters.AddWithValue("@NIK", textNIK.Text);
+            //command.Parameters.AddWithValue("@Tujuan", boxTujuan.Text);
+            //command.Parameters.AddWithValue("@NomorKursi", boxKursi.Text);
+            //command.Parameters.AddWithValue("@Jenis", boxJenis.Text);
+            //command.Parameters.AddWithValue("@Tanggal", dateTanggal.Text);
             //command.Parameters.AddWithValue("@Harga", .Text);
             //command.Parameters.AddWithValue("@KodeBooking", .Text);
             command.ExecuteNonQuery();
