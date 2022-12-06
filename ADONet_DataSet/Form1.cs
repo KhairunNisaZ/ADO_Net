@@ -13,8 +13,8 @@ namespace ADONet_DataSet
         // Ganti Data Sourcenya disini aja yaaa biar ga ulang ulang terus gantinya --> ******   //
         // //////////////////////////////////////////////////////////////////////////////////// //
 
-        //string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+        string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
+        //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
         
         public Form1()
         {
@@ -68,7 +68,7 @@ namespace ADONet_DataSet
             try
             {
                 dbConnection.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("UPDATE travelData SET Nama='"+textNama.Text+"', NIK='"+textNIK.Text+"', Tujuan='"+boxTujuan.Text+"', NomorKursi='"+ boxKursi.Text+"', Jenis='"+ boxJenis.Text+"', Tanggal='"+ dateTanggal.Text+ "' WHERE Nama='"+textNama.Text+"'", dbConnection);
+                SqlDataAdapter adapter = new SqlDataAdapter("UPDATE travelData SET Nama='"+textNama.Text+"', NIK='"+textNIK.Text+"', Tujuan='"+boxTujuan.Text+"', NomorKursi='"+ boxKursi.Text+"', Jenis='"+ boxJenis.Text+"', Tanggal='"+ dateTanggal.Text+ "' WHERE KodeBooking='"+textKode.Text+"'", dbConnection);
                 adapter.SelectCommand.ExecuteNonQuery();
                 MessageBox.Show("Update Success");
                 dbConnection.Close();
@@ -78,25 +78,18 @@ namespace ADONet_DataSet
             {
                 MessageBox.Show("Update Error" + ex);
             }
-
-            finally
-            {
-                dbConnection.Close();
-            }
         }
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlDataAdapter dataadapter = new SqlDataAdapter("SELECT * FROM travelData", connection);
+            SqlConnection dbConnection = new SqlConnection(connectionString);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM travelData", dbConnection);
             DataSet datas = new DataSet();
-            connection.Open();
-            dataadapter.Fill(datas, "travelData");
-            connection.Close();
+            dbConnection.Open();
+            adapter.Fill(datas, "travelData");
+            dbConnection.Close();
             dataGridView1.DataSource = datas;
             dataGridView1.DataMember = "travelData";
-
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -107,15 +100,12 @@ namespace ADONet_DataSet
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            //string s_nama = textNama.Text;
-
             SqlConnection dbConnection = new SqlConnection(connectionString);
            
-
             try
             {
                 dbConnection.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM travelData WHERE (Nama='" + textNama.Text + "')", dbConnection);
+                SqlCommand command = new SqlCommand("SELECT * FROM travelData WHERE (KodeBooking='" + textKode.Text + "')", dbConnection);
                 SqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read()) {
@@ -126,14 +116,12 @@ namespace ADONet_DataSet
                     boxJenis.Text = reader.GetValue(5).ToString();
                     dateTanggal.Text = reader.GetValue(6).ToString();
                 }
+                MessageBox.Show("Search Success");
+                dbConnection.Close();
             }
 
             catch (Exception ex) {
-                MessageBox.Show("Searching error" + ex);
-            }
-
-            finally {
-                dbConnection.Close();
+                MessageBox.Show("Search Error" + ex);
             }
         }
 
@@ -143,29 +131,21 @@ namespace ADONet_DataSet
             try
             {
                 dbConnection.Open();
-                SqlCommand delete = new SqlCommand("DELETE FROM travelData WHERE (Nama='"+ textNama.Text+"')", dbConnection);
+                SqlCommand delete = new SqlCommand("DELETE FROM travelData WHERE (KodeBooking='"+ textKode.Text+"')", dbConnection);
                 delete.ExecuteNonQuery();
                 MessageBox.Show("Delete Success");
                 dbConnection.Close();
             }
 
-
             catch (Exception ex)
             {
-                MessageBox.Show("Deleting error" + ex);
+                MessageBox.Show("Delete Error" + ex);
             }
 
-            finally
-            {
-                dbConnection.Close();
-            }
-
-
-          
-            SqlDataAdapter dataadapter = new SqlDataAdapter("SELECT * FROM travelData", dbConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM travelData", dbConnection);
             DataSet datas = new DataSet();
             dbConnection.Open();
-            dataadapter.Fill(datas, "travelData");
+            adapter.Fill(datas, "travelData");
             dbConnection.Close();
             dataGridView1.DataSource = datas;
             dataGridView1.DataMember = "travelData";
