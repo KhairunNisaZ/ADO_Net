@@ -46,9 +46,9 @@ namespace Server.Controllers
         }
 
         [HttpPut("{KodeBooking}")]
-        public void Patch([FromRoute]string KodeBooking, [FromBody]Penumpang penumpang)
+        public void Patch([FromBody]Penumpang penumpang)
         {
-            passengerRepos.UpdatePassenger(KodeBooking, penumpang);
+            passengerRepos.UpdatePassenger(penumpang);
         }
     }
 }

@@ -45,6 +45,7 @@ namespace ADONet_DataSet
             penumpang.HitungKodeBooking();
             penumpang.HitungHarga();
 
+            MessageBox.Show(penumpang.Nama.ToString());
             var client = new RestClient();
             var req = new RestRequest(route);
             
@@ -107,8 +108,14 @@ namespace ADONet_DataSet
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
+            textNama.Clear();
+            textNIK.Clear();
+            boxTujuan.ResetText();
+            boxKursi.ResetText();
+            boxJenis.ResetText();
+            dateTanggal.ResetText();
             // TODO: This line of code loads data into the 'travelDatabaseDataSet2.travelData' table. You can move, or remove it, as needed.
-            this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
+            //this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
         }
 
         private void BtnFind_Click(object sender, EventArgs e)
