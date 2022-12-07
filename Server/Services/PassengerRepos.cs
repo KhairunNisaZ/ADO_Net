@@ -97,9 +97,7 @@ namespace Server.Services
             command.Parameters.AddWithValue("@NomorKursi", penumpang.Kursi);
             command.Parameters.AddWithValue("@Jenis", penumpang.Jenis);
             command.Parameters.AddWithValue("@Tanggal", penumpang.Tanggal);
-            penumpang.HitungHarga();
             command.Parameters.AddWithValue("@Harga", penumpang.Harga);
-            penumpang.HitungKodeBooking();
             command.Parameters.AddWithValue("@KodeBooking", penumpang.KodeBooking);
             command.ExecuteNonQuery();
 
@@ -117,7 +115,7 @@ namespace Server.Services
             dbConnection.Close();
         }
 
-        public void UpdatePassenger(string index, Penumpang penumpang)
+        public void UpdatePassenger(Penumpang penumpang)
         {
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
