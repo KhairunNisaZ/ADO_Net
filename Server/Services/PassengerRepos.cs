@@ -1,7 +1,7 @@
-﻿using Server.Models;
-using System.Data;
+﻿using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using DataPenumpang;
 
 namespace Server.Services
 {
@@ -11,7 +11,10 @@ namespace Server.Services
         /// this is <c>connectionString</c> as parameter to <see cref="SqlConnection"/>
         /// </summary>
         readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\Server\TravelData.mdf;Integrated Security=True";
-
+        //readonly string connection = @"*";
+        //readonly string connection = @"*";
+        
+        
         /// <summary>
         /// Get All Passenger Data
         /// </summary>
@@ -19,12 +22,12 @@ namespace Server.Services
         /// <see cref="List{T}"/>
         /// 
         /// <para>
-        /// <see cref="T"/> is <see cref="Passenger"/>
+        /// <see cref="T"/> is <see cref="Penumpang"/>
         /// </para>
         /// </returns>
-        public List<Passenger> GetAllPassenger()
+        public List<Penumpang> GetAllPassenger()
         {
-            List<Passenger> passengers = new();
+            List<Penumpang> ListPenumpang = new();
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
 
@@ -33,80 +36,82 @@ namespace Server.Services
 
             while (rows.Read())
             {
-                Passenger passenger = new()
+                Penumpang penumpang = new()
                 {
 
                     Id = (int)rows.GetValue(0),
                     Nama = (string)rows.GetValue(1),
-                    NIK = (string)rows.GetValue(2),
+                    Nik = (string)rows.GetValue(2),
                     Tujuan = (string)rows.GetValue(3),
-                    NomorKursi = (string)rows.GetValue(4),
+                    Kursi = (string)rows.GetValue(4),
                     Jenis = (string)rows.GetValue(5),
                     Tanggal = (string)rows.GetValue(6),
                     Harga = (string)rows.GetValue(7),
                     KodeBooking = (string)rows.GetValue(8)
                 };
 
-                passengers.Add(passenger);
+                ListPenumpang.Add(penumpang);
             }
             dbConnection.Close();
 
             //ToDo -> Add Error Handler when database is null
-            return passengers;
+            return ListPenumpang;
         }
 
-        public Passenger GetPassengerById(int index)
+        public Penumpang GetPassengerById(string index)
         {
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
 
-            SqlCommand command = new("SELECT * FROM PassengersData WHERE (Id=" + index +")", dbConnection);
+            SqlCommand command = new("SELECT * FROM PassengersData WHERE (KodeBooking='" + index +"')", dbConnection);
             SqlDataReader rows = command.ExecuteReader();
 
-            Passenger passenger = new();
+            Penumpang penumpang = new();
             while (rows.Read())
             {
-                passenger.Id = (int)rows.GetValue(0);
-                passenger.Nama = (string)rows.GetValue(1);
-                passenger.NIK = (string)rows.GetValue(2);
-                passenger.Tujuan = (string)rows.GetValue(3);
-                passenger.NomorKursi = (string)rows.GetValue(4);
-                passenger.Jenis = (string)rows.GetValue(5);
-                passenger.Tanggal = (string)rows.GetValue(6);
-                passenger.Harga = (string)rows.GetValue(7);
-                passenger.KodeBooking = (string)rows.GetValue(8);
+                penumpang.Id = (int)rows.GetValue(0);
+                penumpang.Nama = (string)rows.GetValue(1);
+                penumpang.Nik = (string)rows.GetValue(2);
+                penumpang.Tujuan = (string)rows.GetValue(3);
+                penumpang.Kursi = (string)rows.GetValue(4);
+                penumpang.Jenis = (string)rows.GetValue(5);
+                penumpang.Tanggal = (string)rows.GetValue(6);
+                penumpang.Harga = (string)rows.GetValue(7);
+                penumpang.KodeBooking = (string)rows.GetValue(8);
             }
             dbConnection.Close();
             
             //ToDo -> Add Error Handler when data{id} is null
-            return passenger;
+            return penumpang;
         }
 
-        public void AddPassenger()
+        public void AddPassenger(Penumpang penumpang)
         {
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
 
             SqlCommand command = new("INSERT INTO PassengersData (Nama, NIK, Tujuan, NomorKursi, Jenis, Tanggal, Harga, KodeBooking) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis, @Tanggal, @Harga, @KodeBooking)", dbConnection);
-            command.Parameters.AddWithValue("@Nama", "Agustioleo");
-            command.Parameters.AddWithValue("@NIK", "567112310091");
-            command.Parameters.AddWithValue("@Tujuan", "Papua Barat");
-            command.Parameters.AddWithValue("@NomorKursi", "23");
-            command.Parameters.AddWithValue("@Jenis", "Eksekutif");
-            command.Parameters.AddWithValue("@Tanggal", "20 November 2022");
-            command.Parameters.AddWithValue("@Harga", "Rp80.000");
-            command.Parameters.AddWithValue("@KodeBooking", "SMG112312311123");
+            command.Parameters.AddWithValue("@Nama", penumpang.Nama);
+            command.Parameters.AddWithValue("@NIK", penumpang.Nik);
+            command.Parameters.AddWithValue("@Tujuan", penumpang.Tujuan);
+            command.Parameters.AddWithValue("@NomorKursi", penumpang.Kursi);
+            command.Parameters.AddWithValue("@Jenis", penumpang.Jenis);
+            command.Parameters.AddWithValue("@Tanggal", penumpang.Tanggal);
+            penumpang.HitungHarga();
+            command.Parameters.AddWithValue("@Harga", penumpang.Harga);
+            penumpang.HitungKodeBooking();
+            command.Parameters.AddWithValue("@KodeBooking", penumpang.KodeBooking);
             command.ExecuteNonQuery();
 
             dbConnection.Close();
         }
 
-        public void DeletePassenger(int index)
+        public void DeletePassenger(string index)
         {
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
 
-            SqlCommand delete = new("DELETE FROM PassengersData WHERE (Id=" + index + ")", dbConnection);
+            SqlCommand delete = new("DELETE FROM PassengersData WHERE (KodeBooking='" + index + "')", dbConnection);
             delete.ExecuteNonQuery();
 
             dbConnection.Close();
