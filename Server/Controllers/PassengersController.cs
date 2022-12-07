@@ -44,5 +44,11 @@ namespace Server.Controllers
         {
             passengerRepos.DeletePassenger(KodeBooking);
         }
+
+        [HttpPut("{KodeBooking}")]
+        public void Patch([FromRoute]string KodeBooking, [FromBody]Penumpang penumpang)
+        {
+            passengerRepos.UpdatePassenger(KodeBooking, penumpang);
+        }
     }
 }
