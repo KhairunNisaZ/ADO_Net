@@ -23,13 +23,8 @@ namespace ADONet_DataSet
         // Ganti Data Sourcenya disini aja yaaa biar ga ulang ulang terus gantinya --> ******   //
         // //////////////////////////////////////////////////////////////////////////////////// //
 
-        readonly string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\ADONet_DataSet\travelDatabase.mdf; Integrated Security = True; Connect Timeout = 30";
-        //readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\ADONet_DataSet\travelDatabase.mdf;Integrated Security=True;Connect Timeout=30";
-        //readonly string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\kuliah\sem 3\pbo\nisa\ADO_Net\ADONet_DataSet\travelDatabase.mdf;Integrated Security = True; Connect Timeout = 30";
+        readonly string route = "https://localhost:7219/jendelatravel/Passengers";
 
-        string route = "https://localhost:7219/jendelatravel/Passengers";
-
-        Penumpang penumpang = new Penumpang();
         public Form1()
         {
             InitializeComponent();
@@ -37,32 +32,30 @@ namespace ADONet_DataSet
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            
-            penumpang.Nama = textNama.Text;
-            penumpang.Nik = textNIK.Text;
-            penumpang.Tujuan = boxTujuan.Text;
-            penumpang.Kursi = boxKursi.Text;
-            penumpang.Jenis = boxJenis.Text;
-            penumpang.Tanggal = dateTanggal.Text;
+
+            Penumpang penumpang = new Penumpang
+            {
+                Nama = textNama.Text,
+                Nik = textNIK.Text,
+                Tujuan = boxTujuan.Text,
+                Kursi = boxKursi.Text,
+                Jenis = boxJenis.Text,
+                Tanggal = dateTanggal.Text
+            };
             penumpang.HitungKodeBooking();
             penumpang.HitungHarga();
 
-            SqlConnection dbConnection = new SqlConnection(connectionString);
-            dbConnection.Open();
+            var client = new RestClient();
+            var req = new RestRequest(route);
+            
+            req.AddHeader("Content-Type", "application/json");
+            req.AddBody(penumpang, "application/json");
+            client.Post(req);
 
-            SqlCommand command = new SqlCommand("INSERT INTO travelData (Nama, NIK, Tujuan, NomorKursi, Jenis, Tanggal, Harga, KodeBooking) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis, @Tanggal, @Harga, @KodeBooking)", dbConnection);
+            req = new RestRequest(route);
+            var data = client.Get<List<Penumpang>>(req);
 
-            command.Parameters.AddWithValue("@Nama", penumpang.Nama);
-            command.Parameters.AddWithValue("@NIK", penumpang.Nik);
-            command.Parameters.AddWithValue("@Tujuan", penumpang.Tujuan);
-            command.Parameters.AddWithValue("@NomorKursi", penumpang.Kursi);
-            command.Parameters.AddWithValue("@Jenis", penumpang.Jenis);
-            command.Parameters.AddWithValue("@Tanggal", penumpang.Tanggal);
-            command.Parameters.AddWithValue("@Harga", penumpang.Harga);
-            command.Parameters.AddWithValue("@KodeBooking", penumpang.KodeBooking);
-            command.ExecuteNonQuery();
-
-            dbConnection.Close();
+            dataGridView1.DataSource = data;
             MessageBox.Show("Data Added to Box");
             textNama.Clear();
             textNIK.Clear();
@@ -71,28 +64,36 @@ namespace ADONet_DataSet
             boxJenis.ResetText();
             dateTanggal.ResetText();
         }
-        public static void main(string[] args)
+        public static void main(string[] args) 
         {
             Application.Run(new Form1());
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            SqlConnection dbConnection = new SqlConnection(connectionString);
-
-            try
+            Penumpang penumpang = new Penumpang()
             {
-                dbConnection.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("UPDATE travelData SET Nama='"+textNama.Text+"', NIK='"+textNIK.Text+"', Tujuan='"+boxTujuan.Text+"', NomorKursi='"+ boxKursi.Text+"', Jenis='"+ boxJenis.Text+"', Tanggal='"+ dateTanggal.Text+ "' WHERE KodeBooking='"+textKode.Text+"'", dbConnection);
-                adapter.SelectCommand.ExecuteNonQuery();
-                MessageBox.Show("Update Success");
-                dbConnection.Close();
-            }
+                Nama = textNama.Text,
+                Nik = textNIK.Text,
+                Tujuan = boxTujuan.Text,
+                Kursi = boxKursi.Text,
+                Jenis = boxJenis.Text,
+                Tanggal = dateTanggal.Text,
+                KodeBooking = textKode.Text
+            };
+            var client = new RestClient();
+            var req = new RestRequest(route + "/" + penumpang.KodeBooking);
+            req.AddHeader("Content-Type", "application/json");
+            req.AddBody(penumpang, "application/json");
+            client.Put(req);
 
-            catch (Exception ex)
-            {
-                MessageBox.Show("Update Error" + ex);
-            }
+            MessageBox.Show($"Data penumpang {penumpang.Nama} berhasil diganti.");
+            textNama.Clear();
+            textNIK.Clear();
+            boxTujuan.ResetText();
+            boxKursi.ResetText();
+            boxJenis.ResetText();
+            dateTanggal.ResetText();
         }
 
         private void  BtnRead_Click(object sender, EventArgs e)
@@ -112,28 +113,32 @@ namespace ADONet_DataSet
 
         private void BtnFind_Click(object sender, EventArgs e)
         {
-            SqlConnection dbConnection = new SqlConnection(connectionString);
-           
-            try
+            if (textKode.Text != "")
             {
-                dbConnection.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM travelData WHERE (KodeBooking='" + textKode.Text + "')", dbConnection);
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read()) {
-                    textNama.Text = reader.GetValue(1).ToString();
-                    textNIK.Text = reader.GetValue(2).ToString();
-                    boxTujuan.Text = reader.GetValue(3).ToString();
-                    boxKursi.Text = reader.GetValue(4).ToString();
-                    boxJenis.Text = reader.GetValue(5).ToString();
-                    dateTanggal.Text = reader.GetValue(6).ToString();
+                Penumpang penumpang = new Penumpang()
+                {
+                    KodeBooking = textKode.Text
+                };
+                var client = new RestClient();
+                var req = new RestRequest(route + "/" + penumpang.KodeBooking);
+                var res = client.Get<Penumpang>(req);
+                if (res.Nama != null)
+                {
+                    textNama.Text = res.Nama;
+                    textNIK.Text = res.Nik;
+                    boxTujuan.Text = res.Tujuan;
+                    boxKursi.Text = res.Kursi;
+                    boxJenis.Text = res.Jenis;
+                    dateTanggal.Text = res.Tanggal;
                 }
-                MessageBox.Show("Search Success");
-                dbConnection.Close();
+                else
+                {
+                    MessageBox.Show($"Data penumpang {penumpang.KodeBooking} tidak ditemukan.");
+                }
             }
-
-            catch (Exception ex) {
-                MessageBox.Show("Search Error" + ex);
+            else
+            {
+                MessageBox.Show("Harap Masukkan Kode Booking");
             }
         }
 

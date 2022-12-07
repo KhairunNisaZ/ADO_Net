@@ -117,13 +117,21 @@ namespace Server.Services
             dbConnection.Close();
         }
 
-        /*public void UpdatePassenger(int index)
+        public void UpdatePassenger(string index, Penumpang penumpang)
         {
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
-            SqlDataAdapter adapter = new("UPDATE travelData SET Nama='Mardigu', NIK='" + textNIK.Text + "', Tujuan='" + boxTujuan.Text + "', NomorKursi='" + boxKursi.Text + "', Jenis='" + boxJenis.Text + "', Tanggal='" + dateTanggal.Text + "' WHERE KodeBooking='" + textKode.Text + "'", dbConnection);
+            SqlDataAdapter adapter = new("UPDATE PassengersData SET Nama='" + penumpang.Nama +
+                "', NIK='" + penumpang.Nik + 
+                "', Tujuan='" + penumpang.Tujuan + 
+                "', NomorKursi='" + penumpang.Kursi + 
+                "', Jenis='" + penumpang.Jenis + 
+                "', Tanggal='" + penumpang.Tanggal + 
+                "' WHERE KodeBooking='" + penumpang.KodeBooking + "'",
+                dbConnection);
+
             adapter.SelectCommand.ExecuteNonQuery();
             dbConnection.Close();
-        }*/
+        }
     }
 }
