@@ -9,11 +9,6 @@ using System.Text.Json.Serialization;
 using System.Windows.Forms;
 using DataPenumpang;
 using RestSharp;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Net.Http;
 
 namespace ADONet_DataSet
 {
@@ -114,8 +109,7 @@ namespace ADONet_DataSet
             boxKursi.ResetText();
             boxJenis.ResetText();
             dateTanggal.ResetText();
-            // TODO: This line of code loads data into the 'travelDatabaseDataSet2.travelData' table. You can move, or remove it, as needed.
-            //this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
+            
         }
 
         private void BtnFind_Click(object sender, EventArgs e)

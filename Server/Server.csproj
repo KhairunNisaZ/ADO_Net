@@ -18,6 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="travelDatabase_log.ldf" />
+    <None Remove="TravelData_log.ldf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Penumpang_21" Version="1.6.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
@@ -34,10 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="TravelData.mdf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="TravelData_log.ldf">
+    <None Update="travelDatabase.mdf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
