@@ -162,13 +162,16 @@ namespace ADONet_DataSet
                 var res = client.Get<Penumpang>(req);
                 if (res.Nama != null)
                 {
-                    var nama = res.Nama;
-                    client.Delete(req);
-                    MessageBox.Show($"Data Penumpang {nama} berhasil dihapus.");
-                    req = new RestRequest(route);
-                    var data = client.Get<List<Penumpang>>(req);
+                    if(MessageBox.Show("Apakah Anda Yakin Ingin Menghapus Data?", "Remove Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        var nama = res.Nama;
+                        client.Delete(req);
+                        MessageBox.Show($"Data Penumpang {nama} berhasil dihapus.");
+                        req = new RestRequest(route);
+                        var data = client.Get<List<Penumpang>>(req);
 
-                    dataGridView1.DataSource = data;
+                        dataGridView1.DataSource = data;
+                    }
                 }
                 else
                 {
