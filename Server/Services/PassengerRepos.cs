@@ -10,8 +10,8 @@ namespace Server.Services
         /// <summary>
         /// <c>connectionString</c> as parameter to <see cref="SqlConnection"/>
         /// </summary>
-        //readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\Server\travelDatabase.mdf;Integrated Security=True";
-        readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\Server\travelDatabase.mdf;Integrated Security=True";
+        readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\Server\travelDatabase.mdf;Integrated Security=True";
+        //readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\Server\travelDatabase.mdf;Integrated Security=True";
         //readonly string connection = @"*";
         
         
