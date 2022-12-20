@@ -10,23 +10,6 @@ using System.Windows.Forms;
 using DataPenumpang;
 using RestSharp;
 
-public class Passanger{
-    public string Nama { get { return this.Nama; } set { this.Nama = value; } }
-    public string Nik { get { return this.Nik; } set { this.Nik = value; } }
-    public string Tujuan { get { return this.Tujuan; } set { this.Tujuan = value; } }
-    public string Kursi { get { return this.Kursi; } set { this.Kursi = value; } }
-    public string Jenis { get { return this.Jenis; } set { this.Jenis = value; } }
-    public string Tanggal { get { return this.Tanggal; } set { this.Tanggal = value; } }
-    public string KodeBooking { get { return this.KodeBooking; } set { this.KodeBooking = value; } }
-    public string Updater { get { return this.Updater; } set { this.Updater = value; } }
-    public string Harga { get { return this.Harga; } set { this.Harga = value; } }
-
-    public Passanger()
-    {
-
-    }
-}
-
 namespace ADONet_DataSet
 {
     public partial class Form1 : Form
@@ -85,7 +68,7 @@ namespace ADONet_DataSet
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            Passanger passanger = new Passanger
+            Penumpang penumpang = new Penumpang
             {
                 Nama = textNama.Text,
                 Nik = textNIK.Text,
@@ -94,17 +77,16 @@ namespace ADONet_DataSet
                 Jenis = boxJenis.Text,
                 Tanggal = dateTanggal.Text,
                 KodeBooking = textKode.Text,
-                Updater = "000000",
-                Harga = "Rp1000000000000"
             };
-            
-            var client = new RestClient();
-            var req = new RestRequest(route + "/" + passanger.KodeBooking);
-            req.AddHeader("Content-Type", "application/json");
-            req.AddBody(passanger, "application/json");
-            client.Put(req);
+            penumpang.UpdatePenumpang();
+            MessageBox.Show(route + "/" + penumpang.KodeBooking);
 
-            MessageBox.Show($"Data penumpang {passanger.Nama} berhasil diganti.");
+            var client = new RestClient();
+            var req = new RestRequest(route + "/" + penumpang.KodeBooking, Method.Put);
+            req.AddBody(penumpang, "application/json");
+            client.Execute(req);
+
+            MessageBox.Show($"Data penumpang {penumpang.Nama} berhasil diganti.");
             textNama.Clear();
             textNIK.Clear();
             boxTujuan.ResetText();
@@ -174,17 +156,21 @@ namespace ADONet_DataSet
                     KodeBooking = textKode.Text
                 };
                 var client = new RestClient();
+
                 var req = new RestRequest(route + "/" + penumpang.KodeBooking);
                 var res = client.Get<Penumpang>(req);
                 if (res.Nama != null)
                 {
-                    var nama = res.Nama;
-                    client.Delete(req);
-                    MessageBox.Show($"Data Penumpang {nama} berhasil dihapus.");
-                    req = new RestRequest(route);
-                    var data = client.Get<List<Penumpang>>(req);
+                    if(MessageBox.Show("Apakah Anda Yakin Ingin Menghapus Data?", "Remove Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        var nama = res.Nama;
+                        client.Delete(req);
+                        MessageBox.Show($"Data Penumpang {nama} berhasil dihapus.");
+                        req = new RestRequest(route);
+                        var data = client.Get<List<Penumpang>>(req);
 
-                    dataGridView1.DataSource = data;
+                        dataGridView1.DataSource = data;
+                    }
                 }
                 else
                 {

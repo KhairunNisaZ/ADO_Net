@@ -65,10 +65,10 @@ namespace Server.Controllers
         }
 
         [HttpPut("{KodeBooking}")]
-        public void Put([FromBody]Passanger passanger)
+        public void Put([FromBody]Penumpang penumpang)
         {
 
-            passengerRepos.UpdatePassenger(passanger);
+            passengerRepos.UpdatePassenger(penumpang);
         }
     }
 }

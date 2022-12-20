@@ -120,22 +120,19 @@ namespace Server.Services
         {
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
-            SqlCommand command = new("SELECT id FROM dataTravel WHERE(KodeBooking='"+ index + "'", dbConnection);
-            SqlDataReader id = command.ExecuteReader();
-            int Id = (int)id.GetValue(0);
 
-            SqlDataAdapter adapter = new("UPDATE dataTravel SET Nama='" + penumpang.Nama +
+            SqlCommand adapter = new("UPDATE dataTravel SET Nama='" + penumpang.Nama +
                 "', NIK='" + penumpang.Nik + 
                 "', Tujuan='" + penumpang.Tujuan + 
                 "', NomorKursi='" + penumpang.Kursi + 
                 "', Jenis='" + penumpang.Jenis + 
                 "', Tanggal='" + penumpang.Tanggal + 
-                "', KodeBooking='" + penumpang.KodeBooking +
+                "', KodeBooking='" + penumpang.KodeBookingNew +
                 "', Harga='" + penumpang.Harga +
-                "' WHERE Id='" + Id+ "'",
+                "' WHERE KodeBooking='" + penumpang.KodeBooking + "'",
                 dbConnection);
 
-            adapter.SelectCommand.ExecuteNonQuery();
+            adapter.ExecuteNonQuery();
             dbConnection.Close();
         }
     }
