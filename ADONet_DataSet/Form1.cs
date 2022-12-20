@@ -41,7 +41,6 @@ namespace ADONet_DataSet
             penumpang.HitungKodeBooking();
             penumpang.HitungHarga();
 
-            MessageBox.Show(penumpang.Nama.ToString());
             var client = new RestClient();
             var req = new RestRequest(route);
             
@@ -53,12 +52,12 @@ namespace ADONet_DataSet
             var data = client.Get<List<Penumpang>>(req);
 
             dataGridView1.DataSource = data;
-            MessageBox.Show("Data Added to Box");
+            MessageBox.Show("Data penumpang ditambahkan");
             textNama.Clear();
             textNIK.Clear();
-            boxTujuan.ResetText();
-            boxKursi.ResetText();
-            boxJenis.ResetText();
+            boxKursi.SelectedIndex = -1;
+            boxJenis.SelectedIndex = -1;
+            boxTujuan.SelectedIndex = -1;
             dateTanggal.ResetText();
         }
         public static void main(string[] args) 
@@ -79,7 +78,6 @@ namespace ADONet_DataSet
                 KodeBooking = textKode.Text,
             };
             penumpang.UpdatePenumpang();
-            MessageBox.Show(route + "/" + penumpang.KodeBooking);
 
             var client = new RestClient();
             var req = new RestRequest(route + "/" + penumpang.KodeBooking, Method.Put);
@@ -87,12 +85,17 @@ namespace ADONet_DataSet
             client.Execute(req);
 
             MessageBox.Show($"Data penumpang {penumpang.Nama} berhasil diganti.");
+            req = new RestRequest(route);
+            var data = client.Get<List<Penumpang>>(req);
+
+            dataGridView1.DataSource = data;
             textNama.Clear();
             textNIK.Clear();
-            boxTujuan.ResetText();
-            boxKursi.ResetText();
-            boxJenis.ResetText();
+            boxKursi.SelectedIndex = -1;
+            boxJenis.SelectedIndex = -1;
+            boxTujuan.SelectedIndex = -1;
             dateTanggal.ResetText();
+            textKode.Clear();
         }
 
         private void  BtnRead_Click(object sender, EventArgs e)
@@ -182,6 +185,17 @@ namespace ADONet_DataSet
             {
                 MessageBox.Show("Harap Masukkan Kode Booking");
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            textNama.Clear();
+            textNIK.Clear();
+            boxKursi.SelectedIndex = -1;
+            boxJenis.SelectedIndex = -1;
+            boxTujuan.SelectedIndex = -1;
+            dateTanggal.ResetText();
+            textKode.Clear();
         }
     }
 }

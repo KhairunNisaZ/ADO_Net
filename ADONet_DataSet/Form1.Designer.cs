@@ -31,6 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kursiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kodeBookingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tanggalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnRead = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,21 +62,12 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textKode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kursiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kodeBookingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tanggalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -115,255 +116,6 @@
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.Size = new System.Drawing.Size(1020, 505);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // btnRead
-            // 
-            this.btnRead.Location = new System.Drawing.Point(22, 34);
-            this.btnRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(81, 33);
-            this.btnRead.TabIndex = 0;
-            this.btnRead.Text = "Display";
-            this.btnRead.UseVisualStyleBackColor = true;
-            this.btnRead.Click += new System.EventHandler(this.BtnRead_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(290, 78);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(69, 28);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(257, 237);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Jenis";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 237);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "No Kursi";
-            // 
-            // boxJenis
-            // 
-            this.boxJenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.boxJenis.FormattingEnabled = true;
-            this.boxJenis.Items.AddRange(new object[] {
-            "Ekonomi",
-            "Bisnis",
-            "Eksekutif"});
-            this.boxJenis.Location = new System.Drawing.Point(311, 234);
-            this.boxJenis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.boxJenis.Name = "boxJenis";
-            this.boxJenis.Size = new System.Drawing.Size(98, 23);
-            this.boxJenis.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 138);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Tujuan";
-            // 
-            // boxTujuan
-            // 
-            this.boxTujuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.boxTujuan.FormattingEnabled = true;
-            this.boxTujuan.Items.AddRange(new object[] {
-            "Semarang",
-            "Bandung",
-            "Surabaya"});
-            this.boxTujuan.Location = new System.Drawing.Point(151, 136);
-            this.boxTujuan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.boxTujuan.Name = "boxTujuan";
-            this.boxTujuan.Size = new System.Drawing.Size(270, 23);
-            this.boxTujuan.TabIndex = 12;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "NIK";
-            // 
-            // boxKursi
-            // 
-            this.boxKursi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.boxKursi.FormattingEnabled = true;
-            this.boxKursi.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15"});
-            this.boxKursi.Location = new System.Drawing.Point(151, 234);
-            this.boxKursi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.boxKursi.Name = "boxKursi";
-            this.boxKursi.Size = new System.Drawing.Size(59, 23);
-            this.boxKursi.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Nama";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(311, 355);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 38);
-            this.btnUpdate.TabIndex = 15;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(311, 302);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(100, 38);
-            this.btnSubmit.TabIndex = 1;
-            this.btnSubmit.Text = "Save";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
-            // 
-            // textNIK
-            // 
-            this.textNIK.Location = new System.Drawing.Point(151, 89);
-            this.textNIK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textNIK.MaxLength = 16;
-            this.textNIK.Name = "textNIK";
-            this.textNIK.Size = new System.Drawing.Size(270, 23);
-            this.textNIK.TabIndex = 2;
-            // 
-            // textNama
-            // 
-            this.textNama.Location = new System.Drawing.Point(151, 42);
-            this.textNama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textNama.Name = "textNama";
-            this.textNama.Size = new System.Drawing.Size(270, 23);
-            this.textNama.TabIndex = 0;
-            this.textNama.Text = "\r\n";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.dateTanggal);
-            this.groupBox1.Controls.Add(this.textNama);
-            this.groupBox1.Controls.Add(this.textNIK);
-            this.groupBox1.Controls.Add(this.btnSubmit);
-            this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.boxKursi);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.boxTujuan);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.boxJenis);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(22, 22);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(475, 412);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Input Data";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(46, 187);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 17);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Tanggal ";
-            // 
-            // dateTanggal
-            // 
-            this.dateTanggal.Location = new System.Drawing.Point(151, 182);
-            this.dateTanggal.Name = "dateTanggal";
-            this.dateTanggal.Size = new System.Drawing.Size(270, 23);
-            this.dateTanggal.TabIndex = 16;
-            // 
-            // btnFind
-            // 
-            this.btnFind.Location = new System.Drawing.Point(177, 78);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(75, 27);
-            this.btnFind.TabIndex = 20;
-            this.btnFind.Text = "Search";
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.BtnFind_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnFind);
-            this.groupBox3.Controls.Add(this.textKode);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.btnDelete);
-            this.groupBox3.Location = new System.Drawing.Point(22, 474);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(475, 148);
-            this.groupBox3.TabIndex = 18;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Search and Delete";
-            // 
-            // textKode
-            // 
-            this.textKode.Location = new System.Drawing.Point(151, 43);
-            this.textKode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textKode.Name = "textKode";
-            this.textKode.Size = new System.Drawing.Size(270, 23);
-            this.textKode.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 46);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Kode Booking";
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(DataPenumpang.Penumpang);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -446,6 +198,267 @@
             this.tanggalDataGridViewTextBoxColumn1.ReadOnly = true;
             this.tanggalDataGridViewTextBoxColumn1.Width = 125;
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(DataPenumpang.Penumpang);
+            // 
+            // btnRead
+            // 
+            this.btnRead.Location = new System.Drawing.Point(22, 34);
+            this.btnRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRead.Name = "btnRead";
+            this.btnRead.Size = new System.Drawing.Size(81, 33);
+            this.btnRead.TabIndex = 0;
+            this.btnRead.Text = "Display";
+            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.BtnRead_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(290, 78);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(69, 28);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(257, 237);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Jenis";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(46, 237);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 17);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "No Kursi";
+            // 
+            // boxJenis
+            // 
+            this.boxJenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxJenis.FormattingEnabled = true;
+            this.boxJenis.Items.AddRange(new object[] {
+            "Ekonomi",
+            "Bisnis",
+            "Eksekutif"});
+            this.boxJenis.Location = new System.Drawing.Point(311, 234);
+            this.boxJenis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.boxJenis.Name = "boxJenis";
+            this.boxJenis.Size = new System.Drawing.Size(98, 23);
+            this.boxJenis.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(46, 138);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Tujuan";
+            // 
+            // boxTujuan
+            // 
+            this.boxTujuan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.boxTujuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxTujuan.FormattingEnabled = true;
+            this.boxTujuan.Items.AddRange(new object[] {
+            "Semarang",
+            "Bandung",
+            "Surabaya"});
+            this.boxTujuan.Location = new System.Drawing.Point(151, 136);
+            this.boxTujuan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.boxTujuan.Name = "boxTujuan";
+            this.boxTujuan.Size = new System.Drawing.Size(270, 23);
+            this.boxTujuan.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(46, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "NIK";
+            // 
+            // boxKursi
+            // 
+            this.boxKursi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxKursi.FormattingEnabled = true;
+            this.boxKursi.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"});
+            this.boxKursi.Location = new System.Drawing.Point(151, 234);
+            this.boxKursi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.boxKursi.Name = "boxKursi";
+            this.boxKursi.Size = new System.Drawing.Size(59, 23);
+            this.boxKursi.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(46, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Nama";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(193, 302);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(100, 38);
+            this.btnUpdate.TabIndex = 15;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(311, 302);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(100, 38);
+            this.btnSubmit.TabIndex = 1;
+            this.btnSubmit.Text = "Save";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
+            // 
+            // textNIK
+            // 
+            this.textNIK.Location = new System.Drawing.Point(151, 89);
+            this.textNIK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textNIK.MaxLength = 16;
+            this.textNIK.Name = "textNIK";
+            this.textNIK.Size = new System.Drawing.Size(270, 23);
+            this.textNIK.TabIndex = 2;
+            // 
+            // textNama
+            // 
+            this.textNama.Location = new System.Drawing.Point(151, 42);
+            this.textNama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textNama.Name = "textNama";
+            this.textNama.Size = new System.Drawing.Size(270, 23);
+            this.textNama.TabIndex = 0;
+            this.textNama.Text = "\r\n";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnCancel);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.dateTanggal);
+            this.groupBox1.Controls.Add(this.textNama);
+            this.groupBox1.Controls.Add(this.textNIK);
+            this.groupBox1.Controls.Add(this.btnSubmit);
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.boxKursi);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.boxTujuan);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.boxJenis);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Location = new System.Drawing.Point(22, 22);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(475, 412);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Input Data";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(46, 187);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 17);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Tanggal ";
+            // 
+            // dateTanggal
+            // 
+            this.dateTanggal.Location = new System.Drawing.Point(151, 182);
+            this.dateTanggal.Name = "dateTanggal";
+            this.dateTanggal.Size = new System.Drawing.Size(270, 23);
+            this.dateTanggal.TabIndex = 16;
+            // 
+            // btnFind
+            // 
+            this.btnFind.Location = new System.Drawing.Point(177, 78);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 27);
+            this.btnFind.TabIndex = 20;
+            this.btnFind.Text = "Search";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.BtnFind_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnFind);
+            this.groupBox3.Controls.Add(this.textKode);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.btnDelete);
+            this.groupBox3.Location = new System.Drawing.Point(22, 474);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(475, 148);
+            this.groupBox3.TabIndex = 18;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Search and Delete";
+            // 
+            // textKode
+            // 
+            this.textKode.Location = new System.Drawing.Point(151, 43);
+            this.textKode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textKode.Name = "textKode";
+            this.textKode.Size = new System.Drawing.Size(270, 23);
+            this.textKode.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(29, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Kode Booking";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(311, 356);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 38);
+            this.btnCancel.TabIndex = 18;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -467,11 +480,11 @@
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -486,7 +499,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox boxJenis;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox boxTujuan;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox boxKursi;
         private System.Windows.Forms.Label label1;
@@ -510,6 +522,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tanggalDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ComboBox boxTujuan;
     }
 }
 
