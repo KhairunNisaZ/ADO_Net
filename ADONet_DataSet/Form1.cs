@@ -149,7 +149,6 @@ namespace ADONet_DataSet
             }
         }
 
-        //lengakapin biar ada message box confirm delete yaa
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             if(textKode.Text != "")

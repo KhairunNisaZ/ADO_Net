@@ -9,7 +9,7 @@ namespace UnitTestTravel
     {
         Penumpang penumpang = new Penumpang()
         {
-            Nama = "Khairun Nisa' Zuqri",
+            Nama = "Khairun Nisa Zuqri",
             Nik = "1420993013130004",
             Tujuan = "Semarang",
             Jenis = "Eksekutif"
