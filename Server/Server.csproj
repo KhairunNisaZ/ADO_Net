@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="travelDatabase_log.ldf" />
     <None Remove="TravelData_log.ldf" />
   </ItemGroup>
 
@@ -42,6 +41,9 @@
     <None Update="travelDatabase.mdf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
+	  <None Update="travelDatabase_log.ldf">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </None>
   </ItemGroup>
 
 </Project>

@@ -90,6 +90,7 @@ namespace Server.Services
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
 
+            
             SqlCommand command = new("INSERT INTO dataTravel (Nama, NIK, Tujuan, NomorKursi, Jenis, Tanggal, Harga, KodeBooking) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis, @Tanggal, @Harga, @KodeBooking)", dbConnection);
             command.Parameters.AddWithValue("@Nama", penumpang.Nama);
             command.Parameters.AddWithValue("@NIK", penumpang.Nik);
@@ -119,13 +120,19 @@ namespace Server.Services
         {
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
+            SqlCommand command = new("SELECT id FROM dataTravel WHERE(KodeBooking='"+ index + "'", dbConnection);
+            SqlDataReader id = command.ExecuteReader();
+            int Id = (int)id.GetValue(0);
+
             SqlDataAdapter adapter = new("UPDATE dataTravel SET Nama='" + penumpang.Nama +
                 "', NIK='" + penumpang.Nik + 
                 "', Tujuan='" + penumpang.Tujuan + 
                 "', NomorKursi='" + penumpang.Kursi + 
                 "', Jenis='" + penumpang.Jenis + 
                 "', Tanggal='" + penumpang.Tanggal + 
-                "' WHERE KodeBooking='" + penumpang.KodeBooking + "'",
+                "', KodeBooking='" + penumpang.KodeBooking +
+                "', Harga='" + penumpang.Harga +
+                "' WHERE Id='" + Id+ "'",
                 dbConnection);
 
             adapter.SelectCommand.ExecuteNonQuery();
