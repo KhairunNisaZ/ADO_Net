@@ -9,11 +9,6 @@ using System.Text.Json.Serialization;
 using System.Windows.Forms;
 using DataPenumpang;
 using RestSharp;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Net.Http;
 
 namespace ADONet_DataSet
 {
@@ -42,6 +37,7 @@ namespace ADONet_DataSet
                 Jenis = boxJenis.Text,
                 Tanggal = dateTanggal.Text
             };
+
             penumpang.HitungKodeBooking();
             penumpang.HitungHarga();
 
@@ -72,7 +68,7 @@ namespace ADONet_DataSet
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            Penumpang penumpang = new Penumpang()
+            Penumpang penumpang = new Penumpang
             {
                 Nama = textNama.Text,
                 Nik = textNIK.Text,
@@ -80,13 +76,15 @@ namespace ADONet_DataSet
                 Kursi = boxKursi.Text,
                 Jenis = boxJenis.Text,
                 Tanggal = dateTanggal.Text,
-                KodeBooking = textKode.Text
+                KodeBooking = textKode.Text,
             };
+            penumpang.UpdatePenumpang();
+            MessageBox.Show(route + "/" + penumpang.KodeBooking);
+
             var client = new RestClient();
-            var req = new RestRequest(route + "/" + penumpang.KodeBooking);
-            req.AddHeader("Content-Type", "application/json");
+            var req = new RestRequest(route + "/" + penumpang.KodeBooking, Method.Put);
             req.AddBody(penumpang, "application/json");
-            client.Put(req);
+            client.Execute(req);
 
             MessageBox.Show($"Data penumpang {penumpang.Nama} berhasil diganti.");
             textNama.Clear();
@@ -114,8 +112,7 @@ namespace ADONet_DataSet
             boxKursi.ResetText();
             boxJenis.ResetText();
             dateTanggal.ResetText();
-            // TODO: This line of code loads data into the 'travelDatabaseDataSet2.travelData' table. You can move, or remove it, as needed.
-            //this.travelDataTableAdapter1.Fill(this.travelDatabaseDataSet2.travelData);
+            
         }
 
         private void BtnFind_Click(object sender, EventArgs e)
@@ -149,6 +146,7 @@ namespace ADONet_DataSet
             }
         }
 
+        //lengakapin biar ada message box confirm delete yaa
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             if(textKode.Text != "")
@@ -158,6 +156,7 @@ namespace ADONet_DataSet
                     KodeBooking = textKode.Text
                 };
                 var client = new RestClient();
+
                 var req = new RestRequest(route + "/" + penumpang.KodeBooking);
                 var res = client.Get<Penumpang>(req);
                 if (res.Nama != null)
