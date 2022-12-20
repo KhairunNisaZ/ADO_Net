@@ -424,6 +424,7 @@
             this.dateTanggal.Size = new System.Drawing.Size(323, 23);
             this.dateTanggal.TabIndex = 16;
             this.dateTanggal.TabStop = false;
+            this.dateTanggal.Value = new System.DateTime(2022, 12, 20, 0, 0, 0, 0);
             // 
             // btnFind
             // 
