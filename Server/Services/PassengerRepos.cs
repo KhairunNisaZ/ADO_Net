@@ -8,9 +8,9 @@ namespace Server.Services
     public class PassengerRepos
     {
         /// <summary>
-        /// this is <c>connectionString</c> as parameter to <see cref="SqlConnection"/>
+        /// <c>connectionString</c> as parameter to <see cref="SqlConnection"/>
         /// </summary>
-        readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\Server\TravelData.mdf;Integrated Security=True";
+        readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\Server\travelDatabase.mdf;Integrated Security=True";
         //readonly string connection = @"*";
         //readonly string connection = @"*";
         
@@ -31,7 +31,7 @@ namespace Server.Services
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
 
-            SqlCommand command = new("SELECT * FROM PassengersData", dbConnection);
+            SqlCommand command = new("SELECT * FROM dataTravel", dbConnection);
             SqlDataReader rows = command.ExecuteReader();
 
             while (rows.Read())
@@ -63,7 +63,7 @@ namespace Server.Services
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
 
-            SqlCommand command = new("SELECT * FROM PassengersData WHERE (KodeBooking='" + index +"')", dbConnection);
+            SqlCommand command = new("SELECT * FROM dataTravel WHERE (KodeBooking='" + index +"')", dbConnection);
             SqlDataReader rows = command.ExecuteReader();
 
             Penumpang penumpang = new();
@@ -90,7 +90,8 @@ namespace Server.Services
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
 
-            SqlCommand command = new("INSERT INTO PassengersData (Nama, NIK, Tujuan, NomorKursi, Jenis, Tanggal, Harga, KodeBooking) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis, @Tanggal, @Harga, @KodeBooking)", dbConnection);
+            
+            SqlCommand command = new("INSERT INTO dataTravel (Nama, NIK, Tujuan, NomorKursi, Jenis, Tanggal, Harga, KodeBooking) VALUES (@Nama, @NIK, @Tujuan, @NomorKursi, @Jenis, @Tanggal, @Harga, @KodeBooking)", dbConnection);
             command.Parameters.AddWithValue("@Nama", penumpang.Nama);
             command.Parameters.AddWithValue("@NIK", penumpang.Nik);
             command.Parameters.AddWithValue("@Tujuan", penumpang.Tujuan);
@@ -109,7 +110,7 @@ namespace Server.Services
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
 
-            SqlCommand delete = new("DELETE FROM PassengersData WHERE (KodeBooking='" + index + "')", dbConnection);
+            SqlCommand delete = new("DELETE FROM dataTravel WHERE (KodeBooking='" + index + "')", dbConnection);
             delete.ExecuteNonQuery();
 
             dbConnection.Close();
@@ -119,16 +120,19 @@ namespace Server.Services
         {
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
-            SqlDataAdapter adapter = new("UPDATE PassengersData SET Nama='" + penumpang.Nama +
+
+            SqlCommand adapter = new("UPDATE dataTravel SET Nama='" + penumpang.Nama +
                 "', NIK='" + penumpang.Nik + 
                 "', Tujuan='" + penumpang.Tujuan + 
                 "', NomorKursi='" + penumpang.Kursi + 
                 "', Jenis='" + penumpang.Jenis + 
                 "', Tanggal='" + penumpang.Tanggal + 
+                "', KodeBooking='" + penumpang.KodeBookingNew +
+                "', Harga='" + penumpang.Harga +
                 "' WHERE KodeBooking='" + penumpang.KodeBooking + "'",
                 dbConnection);
 
-            adapter.SelectCommand.ExecuteNonQuery();
+            adapter.ExecuteNonQuery();
             dbConnection.Close();
         }
     }

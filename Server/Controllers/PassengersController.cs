@@ -3,6 +3,25 @@ using Server.Services;
 using DataPenumpang;
 using Microsoft.AspNetCore.Mvc.Routing;
 
+public class Passanger
+{
+    public string Nama { get { return this.Nama; } set { this.Nama = value; } }
+    public string Nik { get { return this.Nik; } set { this.Nik = value; } }
+    public string Tujuan { get { return this.Tujuan; } set { this.Tujuan = value; } }
+    public string Kursi { get { return this.Kursi; } set { this.Kursi = value; } }
+    public string Jenis { get { return this.Jenis; } set { this.Jenis = value; } }
+    public string Tanggal { get { return this.Tanggal; } set { this.Tanggal = value; } }
+    public string KodeBooking { get { return this.KodeBooking; } set { this.KodeBooking = value; } }
+    public string Updater { get { return this.Updater; } set { this.Updater = value; } }
+    public string Harga { get { return this.Harga; } set { this.Harga = value; } }
+
+    public Passanger()
+    {
+
+    }
+}
+
+
 namespace Server.Controllers
 {
     [Route("jendelatravel/[controller]")]
@@ -46,8 +65,9 @@ namespace Server.Controllers
         }
 
         [HttpPut("{KodeBooking}")]
-        public void Patch([FromBody]Penumpang penumpang)
+        public void Put([FromBody]Penumpang penumpang)
         {
+
             passengerRepos.UpdatePassenger(penumpang);
         }
     }
