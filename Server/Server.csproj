@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Penumpang_21" Version="1.6.0" />
+    <PackageReference Include="Penumpang_21" Version="1.7.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <Reference Include="Penumpang_21">
-      <HintPath>..\packages\Penumpang_21.1.6.0\Penumpang\bin\Release\Penumpang_21.dll</HintPath>
+      <HintPath>..\packages\Penumpang_21.1.7.0\Penumpang\bin\Release\Penumpang_21.dll</HintPath>
     </Reference>
   </ItemGroup>
 
