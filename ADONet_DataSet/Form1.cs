@@ -14,10 +14,6 @@ namespace ADONet_DataSet
 {
     public partial class Form1 : Form
     {
-        // //////////////////////////////////////////////////////////////////////////////////// //
-        // Ganti Data Sourcenya disini aja yaaa biar ga ulang ulang terus gantinya --> ******   //
-        // //////////////////////////////////////////////////////////////////////////////////// //
-
         readonly string route = "https://localhost:7219/jendelatravel/Passengers";
 
         public Form1()
@@ -195,6 +191,28 @@ namespace ADONet_DataSet
             boxTujuan.SelectedIndex = -1;
             dateTanggal.ResetText();
             textKode.Clear();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMaximized_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
