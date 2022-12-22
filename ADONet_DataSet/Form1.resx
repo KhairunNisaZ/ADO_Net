@@ -123,11 +123,17 @@
   <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>12, 11</value>
   </metadata>
+  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>12, 11</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnClose.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOgAAADnCAYAAAAU/xqtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAJYtJREFUeF7tnc+LLUlWx+33o6rej6p5Xa9eVb16P7qRoRmaYRARV4O4EhERV+JC
+        vQAADr0BR/uQrQAAJYtJREFUeF7tnc+LLUlWx+33o6rej6p5Xa9eVb16P7qRoRmaYRARV4O4EhERV+JC
         XM1aRFyINIJL/wD/iFkMzdAMTdOIDMMgs5jFMLgQkcGFuBKRRlw8ivF8b8SpOBEZJ29k3oy8kXnPgSDz
         nvhGfDJ+Zd576t6oX9lm77333oP79+8/ffDgwRkSXvss1e7du3fCeir72LtVM4YxjDHCABMVPS2BA8hl
         cCHerZoxjGGMEQYYoFxZCRzAIXBjGMMYuql1SjiOtRtojH4zxuEy/MtgyOCKasKNYQyfpZoxHpx5lzNk
@@ -831,7 +837,7 @@
   <data name="btnMinimize.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALgAAAB/CAYAAABc3gjLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAADkVJREFUeF7tnetuHMcRhXV1JJIyhAAiqRupi/MCQX7nZ2AIgSH4RYPAPwIjyEMJ
+        vQAADr0BR/uQrQAADkVJREFUeF7tnetuHMcRhXV1JJIyhAAiqRupi/MCQX7nZ2AIgSH4RYPAPwIjyEMJ
         fgCnz26d4Znerp6e3WntrFwHaPRMzan+als1yx2vTN2j7t+//+jhw4cXjx49+h4D53bJ1YMHD57Qn3LP
         LOwqGME4CgMBWfCipQiAmYOCLOwqGME4CgMBXKCppQiA6W8tIhjBsEuuujBowNy7iGDUFYwOjN5F0B+M
         uoLRiQHT3CLSovEAU1EwVsRoKQJgLoiCLOwKa9KPYoLhKxh9GZMCeG4RgDOnpYhgBMPCrvZl2GFZhxSB
@@ -898,7 +904,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAB7gAAAjyCAYAAADkJFQpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAA/7JJREFUeF7s3b1Z3dzaLeBTAiVQAAG5EyIlTrhmBZTgEijBJVACJVACJXARKYMO
+        DAAACwwBP0AiyAAA/7JJREFUeF7s3b1Z3dzaLeBTAiVQAAG5EyIlTrhmBZTgEijBJVACJVACJXARKYMO
         9ll6sT/zznfY5kfSmlO6gzsZ0Tnf3tsPz3iWpP/3v//9DwAAALbn6eziNy4Prt/g9uDuiNL/m2rfDtL/
         Hyen8f8uAAAA0LEYAgAAwFE8nZ1XR9rpgPv6oHtzUB+Cnw/+x5vV//ebDvmv/288mX4E8Po/h5P4nxcA
         AACsLIYAAADwKdNB9NdxtH5i+vVx9eEgHWFp1/SDgtf/GX4/+Pmf7dXBz//cz+N/NwAAAOATYggAAAD/

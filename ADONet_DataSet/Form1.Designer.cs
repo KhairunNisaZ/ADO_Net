@@ -84,7 +84,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.btnRead);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.groupBox2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox2.Location = new System.Drawing.Point(723, 63);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.groupBox2.Name = "groupBox2";
@@ -115,7 +115,7 @@
             this.hargaDataGridViewTextBoxColumn1});
             this.dataGridView1.DataSource = this.bindingSource1;
             this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 75);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 87);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -514,10 +514,14 @@
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnMaximized);
             this.panel1.Controls.Add(this.btnMinimize);
-            this.panel1.Location = new System.Drawing.Point(196, 0);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1773, 46);
+            this.panel1.Size = new System.Drawing.Size(1280, 43);
             this.panel1.TabIndex = 19;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // btnClose
             // 
@@ -526,7 +530,7 @@
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1046, 12);
+            this.btnClose.Location = new System.Drawing.Point(1242, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 25);
             this.btnClose.TabIndex = 2;
@@ -540,7 +544,7 @@
             this.btnMaximized.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMaximized.FlatAppearance.BorderSize = 0;
             this.btnMaximized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximized.Location = new System.Drawing.Point(1015, 12);
+            this.btnMaximized.Location = new System.Drawing.Point(1211, 12);
             this.btnMaximized.Name = "btnMaximized";
             this.btnMaximized.Size = new System.Drawing.Size(25, 25);
             this.btnMaximized.TabIndex = 1;
@@ -554,7 +558,7 @@
             this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Location = new System.Drawing.Point(984, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(1180, 12);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(25, 25);
             this.btnMinimize.TabIndex = 0;
@@ -566,15 +570,15 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 720);
+            this.panel2.Size = new System.Drawing.Size(200, 607);
             this.panel2.TabIndex = 20;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 215);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 199);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(171, 174);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -588,7 +592,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1280, 650);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
@@ -600,6 +604,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "Form1";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jendela Travel";
             this.Load += new System.EventHandler(this.Form1_Load_1);
