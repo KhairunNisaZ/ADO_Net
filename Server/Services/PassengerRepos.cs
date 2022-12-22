@@ -58,12 +58,12 @@ namespace Server.Services
             return ListPenumpang;
         }
 
-        public Penumpang GetPassengerById(string index)
+        public Penumpang GetPassengerById(string Kode_Booking)
         {
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
 
-            SqlCommand command = new("SELECT * FROM dataTravel WHERE (KodeBooking='" + index +"')", dbConnection);
+            SqlCommand command = new("SELECT * FROM dataTravel WHERE (KodeBooking='" + Kode_Booking +"')", dbConnection);
             SqlDataReader rows = command.ExecuteReader();
 
             Penumpang penumpang = new();
