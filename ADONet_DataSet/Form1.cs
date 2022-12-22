@@ -3,6 +3,7 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Net.Http.Headers;
 using System.Runtime.Remoting.Contexts;
 using System.Text.Json.Serialization;
@@ -16,14 +17,16 @@ namespace ADONet_DataSet
     {
         readonly string route = "https://localhost:7219/jendelatravel/Passengers";
 
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
+
         public Form1()
         {
             InitializeComponent();
         }
-
+        
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-
             Penumpang penumpang = new Penumpang
             {
                 Nama = textNama.Text,
@@ -111,7 +114,6 @@ namespace ADONet_DataSet
             boxKursi.ResetText();
             boxJenis.ResetText();
             dateTanggal.ResetText();
-            
         }
 
         private void BtnFind_Click(object sender, EventArgs e)
@@ -213,6 +215,26 @@ namespace ADONet_DataSet
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            startPoint = new Point(e.X, e.Y);
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - this.startPoint.X, p.Y - this.startPoint.Y);
+            }
         }
     }
 }

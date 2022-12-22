@@ -32,6 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.kodeBookingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kursiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tanggalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnRead = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -61,14 +69,6 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kodeBookingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kursiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tanggalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -84,7 +84,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.btnRead);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.groupBox2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox2.Location = new System.Drawing.Point(723, 63);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.groupBox2.Name = "groupBox2";
@@ -115,7 +115,7 @@
             this.hargaDataGridViewTextBoxColumn1});
             this.dataGridView1.DataSource = this.bindingSource1;
             this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 75);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 87);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -126,6 +126,78 @@
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.Size = new System.Drawing.Size(528, 452);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // kodeBookingDataGridViewTextBoxColumn1
+            // 
+            this.kodeBookingDataGridViewTextBoxColumn1.DataPropertyName = "KodeBooking";
+            this.kodeBookingDataGridViewTextBoxColumn1.HeaderText = "Kode Booking";
+            this.kodeBookingDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.kodeBookingDataGridViewTextBoxColumn1.Name = "kodeBookingDataGridViewTextBoxColumn1";
+            this.kodeBookingDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.kodeBookingDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // kursiDataGridViewTextBoxColumn
+            // 
+            this.kursiDataGridViewTextBoxColumn.DataPropertyName = "Kursi";
+            this.kursiDataGridViewTextBoxColumn.HeaderText = "Kursi";
+            this.kursiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.kursiDataGridViewTextBoxColumn.Name = "kursiDataGridViewTextBoxColumn";
+            this.kursiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.kursiDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nama";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nama";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nik";
+            this.dataGridViewTextBoxColumn3.HeaderText = "NIK";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Tujuan";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tujuan";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // tanggalDataGridViewTextBoxColumn1
+            // 
+            this.tanggalDataGridViewTextBoxColumn1.DataPropertyName = "Tanggal";
+            this.tanggalDataGridViewTextBoxColumn1.HeaderText = "Tanggal";
+            this.tanggalDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.tanggalDataGridViewTextBoxColumn1.Name = "tanggalDataGridViewTextBoxColumn1";
+            this.tanggalDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tanggalDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Jenis";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Jenis";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // hargaDataGridViewTextBoxColumn1
+            // 
+            this.hargaDataGridViewTextBoxColumn1.DataPropertyName = "Harga";
+            this.hargaDataGridViewTextBoxColumn1.HeaderText = "Harga";
+            this.hargaDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.hargaDataGridViewTextBoxColumn1.Name = "hargaDataGridViewTextBoxColumn1";
+            this.hargaDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.hargaDataGridViewTextBoxColumn1.Width = 125;
             // 
             // bindingSource1
             // 
@@ -442,10 +514,14 @@
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnMaximized);
             this.panel1.Controls.Add(this.btnMinimize);
-            this.panel1.Location = new System.Drawing.Point(196, 0);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1773, 46);
+            this.panel1.Size = new System.Drawing.Size(1280, 43);
             this.panel1.TabIndex = 19;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // btnClose
             // 
@@ -454,7 +530,7 @@
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1046, 12);
+            this.btnClose.Location = new System.Drawing.Point(1242, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 25);
             this.btnClose.TabIndex = 2;
@@ -468,7 +544,7 @@
             this.btnMaximized.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMaximized.FlatAppearance.BorderSize = 0;
             this.btnMaximized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximized.Location = new System.Drawing.Point(1015, 12);
+            this.btnMaximized.Location = new System.Drawing.Point(1211, 12);
             this.btnMaximized.Name = "btnMaximized";
             this.btnMaximized.Size = new System.Drawing.Size(25, 25);
             this.btnMaximized.TabIndex = 1;
@@ -482,7 +558,7 @@
             this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Location = new System.Drawing.Point(984, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(1180, 12);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(25, 25);
             this.btnMinimize.TabIndex = 0;
@@ -494,92 +570,20 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(60)))), ((int)(((byte)(83)))));
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 720);
+            this.panel2.Size = new System.Drawing.Size(200, 607);
             this.panel2.TabIndex = 20;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 215);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 199);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(171, 174);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // kodeBookingDataGridViewTextBoxColumn1
-            // 
-            this.kodeBookingDataGridViewTextBoxColumn1.DataPropertyName = "KodeBooking";
-            this.kodeBookingDataGridViewTextBoxColumn1.HeaderText = "Kode Booking";
-            this.kodeBookingDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.kodeBookingDataGridViewTextBoxColumn1.Name = "kodeBookingDataGridViewTextBoxColumn1";
-            this.kodeBookingDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.kodeBookingDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // kursiDataGridViewTextBoxColumn
-            // 
-            this.kursiDataGridViewTextBoxColumn.DataPropertyName = "Kursi";
-            this.kursiDataGridViewTextBoxColumn.HeaderText = "Kursi";
-            this.kursiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.kursiDataGridViewTextBoxColumn.Name = "kursiDataGridViewTextBoxColumn";
-            this.kursiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kursiDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nama";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nama";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nik";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NIK";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Tujuan";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tujuan";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // tanggalDataGridViewTextBoxColumn1
-            // 
-            this.tanggalDataGridViewTextBoxColumn1.DataPropertyName = "Tanggal";
-            this.tanggalDataGridViewTextBoxColumn1.HeaderText = "Tanggal";
-            this.tanggalDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.tanggalDataGridViewTextBoxColumn1.Name = "tanggalDataGridViewTextBoxColumn1";
-            this.tanggalDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.tanggalDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Jenis";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Jenis";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // hargaDataGridViewTextBoxColumn1
-            // 
-            this.hargaDataGridViewTextBoxColumn1.DataPropertyName = "Harga";
-            this.hargaDataGridViewTextBoxColumn1.HeaderText = "Harga";
-            this.hargaDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.hargaDataGridViewTextBoxColumn1.Name = "hargaDataGridViewTextBoxColumn1";
-            this.hargaDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.hargaDataGridViewTextBoxColumn1.Width = 125;
             // 
             // Form1
             // 
@@ -588,7 +592,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1280, 650);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
@@ -600,6 +604,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "Form1";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jendela Travel";
             this.Load += new System.EventHandler(this.Form1_Load_1);
