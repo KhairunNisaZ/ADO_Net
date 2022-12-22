@@ -2,7 +2,6 @@
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Net.Http.Headers;
 using System.Runtime.Remoting.Contexts;
@@ -27,23 +26,25 @@ namespace ADONet_DataSet
         
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            Penumpang penumpang = new Penumpang
+            if(textNama.Text != "" && textNIK.Text != "" && boxTujuan.Text != "" && boxKursi.Text != "" && boxJenis.Text != "")
             {
-                Nama = textNama.Text,
-                Nik = textNIK.Text,
-                Tujuan = boxTujuan.Text,
-                Kursi = boxKursi.Text,
-                Jenis = boxJenis.Text,
-                Tanggal = dateTanggal.Text
-            };
+                Penumpang penumpang = new Penumpang
+                {
+                    Nama = textNama.Text,
+                    Nik = textNIK.Text,
+                    Tujuan = boxTujuan.Text,
+                    Kursi = boxKursi.Text,
+                    Jenis = boxJenis.Text,
+                    Tanggal = dateTanggal.Text
+                };
 
-            penumpang.HitungKodeBooking();
-            penumpang.HitungHarga();
+                penumpang.HitungKodeBooking();
+                penumpang.HitungHarga();
 
-            var client = new RestClient();
-            var req = new RestRequest(route);
-            
-            req.AddHeader("Content-Type", "application/json");
+                var client = new RestClient();
+                var req = new RestRequest(route);
+                req.AddHeader("Content-Type", "application/json");
+
             req.AddBody(penumpang, "application/json");
             client.Post(req);
 
@@ -58,6 +59,10 @@ namespace ADONet_DataSet
             boxJenis.SelectedIndex = -1;
             boxTujuan.SelectedIndex = -1;
             dateTanggal.ResetText();
+            } else
+            {
+                MessageBox.Show("Harap lengkapi data");
+            }
         }
         public static void main(string[] args) 
         {
@@ -66,6 +71,8 @@ namespace ADONet_DataSet
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            if (textNama.Text != "" && textNIK.Text != "" && boxTujuan.Text != "" && boxKursi.Text != "" && boxJenis.Text != "" && textKode.Text != ""){
+
             Penumpang penumpang = new Penumpang
             {
                 Nama = textNama.Text,
@@ -95,6 +102,18 @@ namespace ADONet_DataSet
             boxTujuan.SelectedIndex = -1;
             dateTanggal.ResetText();
             textKode.Clear();
+            }
+            else
+            {
+                if(textKode.Text == "")
+                {
+                    MessageBox.Show("Data penumpang tidak ditemukan");
+                }
+                else
+                {
+                MessageBox.Show("Harap lengkapi data");
+                }
+            }
         }
 
         private void  BtnRead_Click(object sender, EventArgs e)

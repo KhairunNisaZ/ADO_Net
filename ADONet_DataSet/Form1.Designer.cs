@@ -241,7 +241,7 @@
             this.label5.Location = new System.Drawing.Point(239, 234);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 21);
+            this.label5.Size = new System.Drawing.Size(42, 19);
             this.label5.TabIndex = 9;
             this.label5.Text = "Jenis";
             // 
@@ -251,7 +251,7 @@
             this.label4.Location = new System.Drawing.Point(35, 234);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 21);
+            this.label4.Size = new System.Drawing.Size(61, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "No Kursi";
             // 
@@ -266,7 +266,7 @@
             this.boxJenis.Location = new System.Drawing.Point(294, 231);
             this.boxJenis.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.boxJenis.Name = "boxJenis";
-            this.boxJenis.Size = new System.Drawing.Size(106, 29);
+            this.boxJenis.Size = new System.Drawing.Size(106, 25);
             this.boxJenis.TabIndex = 11;
             // 
             // label3
@@ -275,7 +275,7 @@
             this.label3.Location = new System.Drawing.Point(35, 134);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 21);
+            this.label3.Size = new System.Drawing.Size(54, 19);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tujuan";
             // 
@@ -291,7 +291,7 @@
             this.boxTujuan.Location = new System.Drawing.Point(119, 131);
             this.boxTujuan.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.boxTujuan.Name = "boxTujuan";
-            this.boxTujuan.Size = new System.Drawing.Size(312, 29);
+            this.boxTujuan.Size = new System.Drawing.Size(312, 25);
             this.boxTujuan.TabIndex = 12;
             // 
             // label2
@@ -300,7 +300,7 @@
             this.label2.Location = new System.Drawing.Point(35, 90);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 21);
+            this.label2.Size = new System.Drawing.Size(30, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "NIK";
             // 
@@ -327,7 +327,7 @@
             this.boxKursi.Location = new System.Drawing.Point(119, 231);
             this.boxKursi.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.boxKursi.Name = "boxKursi";
-            this.boxKursi.Size = new System.Drawing.Size(59, 29);
+            this.boxKursi.Size = new System.Drawing.Size(59, 25);
             this.boxKursi.TabIndex = 14;
             // 
             // label1
@@ -336,7 +336,7 @@
             this.label1.Location = new System.Drawing.Point(32, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 21);
+            this.label1.Size = new System.Drawing.Size(52, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nama";
             // 
@@ -378,7 +378,7 @@
             this.textNIK.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.textNIK.MaxLength = 16;
             this.textNIK.Name = "textNIK";
-            this.textNIK.Size = new System.Drawing.Size(312, 27);
+            this.textNIK.Size = new System.Drawing.Size(312, 24);
             this.textNIK.TabIndex = 2;
             // 
             // textNama
@@ -386,7 +386,7 @@
             this.textNama.Location = new System.Drawing.Point(119, 44);
             this.textNama.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.textNama.Name = "textNama";
-            this.textNama.Size = new System.Drawing.Size(312, 27);
+            this.textNama.Size = new System.Drawing.Size(312, 24);
             this.textNama.TabIndex = 0;
             this.textNama.Text = "\r\n";
             // 
@@ -440,7 +440,7 @@
             this.label6.Location = new System.Drawing.Point(32, 185);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 21);
+            this.label6.Size = new System.Drawing.Size(68, 19);
             this.label6.TabIndex = 17;
             this.label6.Text = "Tanggal ";
             // 
@@ -451,7 +451,7 @@
             this.dateTanggal.Location = new System.Drawing.Point(119, 179);
             this.dateTanggal.Margin = new System.Windows.Forms.Padding(4);
             this.dateTanggal.Name = "dateTanggal";
-            this.dateTanggal.Size = new System.Drawing.Size(312, 27);
+            this.dateTanggal.Size = new System.Drawing.Size(312, 24);
             this.dateTanggal.TabIndex = 16;
             this.dateTanggal.TabStop = false;
             this.dateTanggal.Value = new System.DateTime(2022, 12, 20, 0, 0, 0, 0);
@@ -495,7 +495,7 @@
             this.textKode.Location = new System.Drawing.Point(152, 49);
             this.textKode.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.textKode.Name = "textKode";
-            this.textKode.Size = new System.Drawing.Size(312, 27);
+            this.textKode.Size = new System.Drawing.Size(312, 24);
             this.textKode.TabIndex = 1;
             // 
             // label7
@@ -504,7 +504,7 @@
             this.label7.Location = new System.Drawing.Point(19, 52);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 21);
+            this.label7.Size = new System.Drawing.Size(103, 19);
             this.label7.TabIndex = 0;
             this.label7.Text = "Kode Booking";
             // 

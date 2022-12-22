@@ -10,8 +10,8 @@ namespace Server.Services
         /// <summary>
         /// <c>connectionString</c> as parameter to <see cref="SqlConnection"/>
         /// </summary>
-        //readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\Server\travelDatabase.mdf;Integrated Security=True";
-        readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\Server\travelDatabase.mdf;Integrated Security=True";
+        readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\BountyHunt\LearnCSharp\PBO_Project\Server\travelDatabase.mdf;Integrated Security=True";
+        //readonly string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kuliah SMT 3\Pemrograman Berorientasi Objek\Final Project\ADO_Net\Server\travelDatabase.mdf;Integrated Security=True";
         //readonly string connection = @"*";
         
         
@@ -58,12 +58,12 @@ namespace Server.Services
             return ListPenumpang;
         }
 
-        public Penumpang GetPassengerById(string index)
+        public Penumpang GetPassengerById(string Kode_Booking)
         {
             SqlConnection dbConnection = new(connection);
             dbConnection.Open();
 
-            SqlCommand command = new("SELECT * FROM dataTravel WHERE (KodeBooking='" + index +"')", dbConnection);
+            SqlCommand command = new("SELECT * FROM dataTravel WHERE (KodeBooking='" + Kode_Booking +"')", dbConnection);
             SqlDataReader rows = command.ExecuteReader();
 
             Penumpang penumpang = new();
